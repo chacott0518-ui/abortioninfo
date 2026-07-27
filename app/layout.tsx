@@ -16,6 +16,14 @@ import {
 
 import "./globals.css";
 import "@/styles/header.css";
+import localFont from "next/font/local";
+
+const pretendard = localFont({
+  src: "../public/fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+  variable: "--font-ko",
+});
 
 const baseMetadata = buildPageMetadata({
   seo: HOME_SEO,
@@ -72,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={pretendard.variable}>
       <body>
         <a href="#main-content" className="skip-link">
           본문 바로가기
