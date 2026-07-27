@@ -133,7 +133,12 @@ function pathOfUrl(value) {
     const url = raw.startsWith("http")
       ? new URL(raw)
       : new URL(raw, "https://abortioninfo.co.kr");
-    const path = decodeURIComponent(url.pathname).normalize("NFC");
+    let path;
+    try {
+      path = decodeURIComponent(url.pathname).normalize("NFC");
+    } catch {
+      path = url.pathname.normalize("NFC");
+    }
     return path === "" ? "/" : path;
   } catch {
     try {
@@ -143,6 +148,42 @@ function pathOfUrl(value) {
       return raw;
     }
   }
+}
+
+/**
+ * canonical / og:url 비교용 정규화.
+ * 한글 원문과 퍼센트 인코딩을 동일하게 취급한다.
+ * query·hash 제거, trailing slash 정규화, pathname decode.
+ */
+function normalizeCanonicalUrl(value) {
+  if (!value) return null;
+  try {
+    const url = new URL(value);
+    let pathname;
+    try {
+      pathname = decodeURIComponent(url.pathname).normalize("NFC");
+    } catch {
+      pathname = url.pathname.normalize("NFC");
+    }
+    if (pathname.length > 1 && pathname.endsWith("/")) {
+      pathname = pathname.slice(0, -1);
+    }
+    if (pathname === "") pathname = "/";
+    return {
+      origin: url.origin,
+      pathname,
+      key: `${url.origin}${pathname === "/" ? "" : pathname}`,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function sameCanonicalUrl(actual, expected) {
+  const a = normalizeCanonicalUrl(actual);
+  const e = normalizeCanonicalUrl(expected);
+  if (!a || !e) return false;
+  return a.origin === e.origin && a.pathname === e.pathname;
 }
 
 function assertProductionUrl(label, value) {
@@ -212,10 +253,10 @@ async function checkPage(path) {
   if (!twitterImage) fail(`${path}: twitter:image 없음`);
 
   const expectedCanonical = `${CANONICAL_ORIGIN}${path === "/" ? "" : path}`;
-  if (canonical !== expectedCanonical) {
+  if (!sameCanonicalUrl(canonical, expectedCanonical)) {
     fail(`${path}: canonical 불일치 (${canonical})`);
   }
-  if (ogUrl !== expectedCanonical) {
+  if (!sameCanonicalUrl(ogUrl, expectedCanonical)) {
     fail(`${path}: og:url 불일치 (${ogUrl})`);
   }
 
