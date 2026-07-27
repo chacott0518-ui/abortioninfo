@@ -23,7 +23,7 @@ const EXPECTED_TITLES = {
 
 const EXPECTED_DESCRIPTIONS = {
   "/":
-    "임신중절수술의 가능 시기, 비용, 회복기간, 주의사항, 병원 선택과 자주 묻는 질문을 항목별로 정리한 정보 안내입니다.",
+    "연세365산부인과의원이 안내하는 임신중절수술 정보입니다. 가능 시기, 비용, 회복기간, 주의사항, 병원 선택 기준과 자주 묻는 질문을 확인할 수 있습니다.",
   "/임신중절수술-비용":
     "임신중절수술 비용이 달라지는 기준과 검사, 마취, 수술 및 사후관리 포함 항목을 확인할 수 있도록 정리했습니다.",
   "/임신중절수술-회복기간":
@@ -183,6 +183,7 @@ async function checkPage(path) {
   const ogUrl = metaContent(text, "og:url");
   const ogImage = metaContent(text, "og:image");
   const twitterImage = metaContent(text, "twitter:image");
+  const twitterDescription = metaContent(text, "twitter:description");
   const robots = metaContent(text, "robots");
   const titleCount = (text.match(/<title\b/gi) || []).length;
   const canonicalCount = (text.match(/rel=["']canonical["']/gi) || []).length;
@@ -194,6 +195,12 @@ async function checkPage(path) {
   }
   if (description !== EXPECTED_DESCRIPTIONS[path]) {
     fail(`${path}: description 불일치`);
+  }
+  if (ogDescription !== description) {
+    fail(`${path}: og:description과 meta description 불일치`);
+  }
+  if (twitterDescription !== description) {
+    fail(`${path}: twitter:description과 meta description 불일치`);
   }
   if (canonicalCount !== 1) fail(`${path}: canonical 개수 ${canonicalCount}`);
   if (h1Count !== 1) fail(`${path}: H1 개수 ${h1Count}`);

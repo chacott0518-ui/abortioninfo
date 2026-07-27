@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { CONTENT_PAGES } from "@/content/pages";
 import { absoluteUrl } from "@/lib/site-url";
 
-const HOME_LAST_MODIFIED = "2026-07-22";
+const HOME_LAST_MODIFIED = "2026-07-27";
 
 /** 색인 대상: 홈 + 대표 콘텐츠 6개(총 7). redirect·칼럼 URL 제외 */
 export default function sitemap(): MetadataRoute.Sitemap {

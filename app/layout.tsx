@@ -13,7 +13,6 @@ import {
   DEFAULT_OG_IMAGE_HEIGHT,
   DEFAULT_OG_IMAGE_WIDTH,
 } from "@/lib/metadata";
-import { absoluteUrl } from "@/lib/site-url";
 
 import "./globals.css";
 import "@/styles/header.css";
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: "https://abortioninfo.co.kr",
     siteName: "임신중절수술",
-    title: "임신중절수술",
+    title: HOME_SEO.title,
     description: HOME_SEO.description,
     images: [
       {
@@ -61,9 +60,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "임신중절수술",
-    description:
-      "임신중절수술의 가능 시기, 비용, 회복기간, 주의사항과 자주 묻는 질문을 정리했습니다.",
+    title: HOME_SEO.title,
+    description: HOME_SEO.description,
     images: [DEFAULT_OG_IMAGE],
   },
 };

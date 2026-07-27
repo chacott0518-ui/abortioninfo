@@ -33,7 +33,7 @@ const EXPECTED_TITLES = {
 
 const EXPECTED_DESCRIPTIONS = {
   "/":
-    "임신중절수술의 가능 시기, 비용, 회복기간, 주의사항, 병원 선택과 자주 묻는 질문을 항목별로 정리한 정보 안내입니다.",
+    "연세365산부인과의원이 안내하는 임신중절수술 정보입니다. 가능 시기, 비용, 회복기간, 주의사항, 병원 선택 기준과 자주 묻는 질문을 확인할 수 있습니다.",
   "/임신중절수술-비용":
     "임신중절수술 비용이 달라지는 기준과 검사, 마취, 수술 및 사후관리 포함 항목을 확인할 수 있도록 정리했습니다.",
   "/임신중절수술-회복기간":
@@ -238,6 +238,7 @@ async function checkPage(path) {
   const ogUrl = metaContent(text, "og:url");
   const ogImage = metaContent(text, "og:image");
   const twitterImage = metaContent(text, "twitter:image");
+  const twitterDescription = metaContent(text, "twitter:description");
   const h1Count = countH1(text);
   const titleCount = (text.match(/<title\b/gi) || []).length;
   const canonicalCount = (text.match(/rel=["']canonical["']/gi) || []).length;
@@ -259,6 +260,13 @@ async function checkPage(path) {
   if (h1Count !== 1) fail(`${path}: H1 개수 ${h1Count}`);
   if (!ogTitle) fail(`${path}: og:title 없음`);
   if (!ogDescription) fail(`${path}: og:description 없음`);
+  if (ogDescription !== description) {
+    fail(`${path}: og:description과 meta description 불일치`);
+  }
+  if (!twitterDescription) fail(`${path}: twitter:description 없음`);
+  if (twitterDescription !== description) {
+    fail(`${path}: twitter:description과 meta description 불일치`);
+  }
   if (!ogUrl) fail(`${path}: og:url 없음`);
   if (!ogImage) fail(`${path}: og:image 없음`);
   if (!twitterImage) fail(`${path}: twitter:image 없음`);
@@ -389,6 +397,38 @@ async function checkRobots() {
   if (/disallow:\s*\/images/i.test(text)) fail("robots가 images를 차단");
 }
 
+async function checkRss() {
+  const { response, text } = await fetchText("/rss.xml");
+  if (response.status !== 200) {
+    fail(`/rss.xml: HTTP ${response.status}`);
+    return;
+  }
+  const contentType = response.headers.get("content-type") || "";
+  if (!/application\/rss\+xml|text\/xml|application\/xml/i.test(contentType)) {
+    fail(`/rss.xml: Content-Type 이상 (${contentType})`);
+  }
+  if (!/<rss\b/i.test(text) || !/<channel>/i.test(text)) {
+    fail("/rss.xml: RSS 2.0 구조 아님");
+  }
+  assertNoLocalhost("rss", text);
+  assertNoForbiddenHost("rss", text);
+  const items = [...text.matchAll(/<item>/gi)];
+  if (items.length !== PUBLIC_PATHS.length) {
+    fail(`/rss.xml: item 개수 ${items.length} (기대 ${PUBLIC_PATHS.length})`);
+  }
+  for (const p of PUBLIC_PATHS) {
+    const pathOk = [...text.matchAll(/<(?:link|guid)[^>]*>([^<]+)<\//gi)].some(
+      (m) => pathOfUrl(m[1]) === p,
+    );
+    if (!pathOk) fail(`/rss.xml에 ${p} 없음`);
+  }
+  for (const legacy of Object.keys(LEGACY_REDIRECTS)) {
+    if (text.includes(`>${legacy}<`) || text.includes(`>${encodeURI(legacy)}<`)) {
+      fail(`/rss.xml에 redirect URL 포함: ${legacy}`);
+    }
+  }
+}
+
 async function checkRedirects() {
   for (const [from, to] of Object.entries(LEGACY_REDIRECTS)) {
     const { response } = await fetchText(from, { redirect: "manual", skipBody: true });
@@ -431,6 +471,7 @@ async function main() {
   }
   await checkSitemap();
   await checkRobots();
+  await checkRss();
   await checkRedirects();
 
   for (const warning of warnings) console.warn(`WARN  ${warning}`);
