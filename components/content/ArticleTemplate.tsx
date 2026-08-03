@@ -8,6 +8,7 @@ import { ArticleIntro } from "@/components/content/ArticleIntro";
 import { Breadcrumb } from "@/components/content/Breadcrumb";
 import { FaqAccordion } from "@/components/content/FaqList";
 import { HealthInformationNotice } from "@/components/content/HealthInformationNotice";
+import { HubContextLink } from "@/components/content/HubContextLink";
 import { KeySummaryCards } from "@/components/content/KeySummaryCards";
 import { LongGuideImage } from "@/components/content/LongGuideImage";
 import {
@@ -159,6 +160,10 @@ export function ArticleTemplate({ page }: ArticleTemplateProps) {
               title={`${displayH1} 핵심요약`}
               items={page.keySummary}
             />
+          ) : null}
+
+          {page.hubContextLink ? (
+            <HubContextLink link={page.hubContextLink} />
           ) : null}
 
           {tocItems.length > 0 ? (
