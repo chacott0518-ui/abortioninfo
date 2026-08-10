@@ -19,6 +19,7 @@ import {
   HOME_INTRO,
   HOME_SECTIONS,
   HOME_TOC,
+  CARD_PUBLISHED_AT,
 } from "@/content/pages/home";
 import {
   faqPageJsonLd,
@@ -106,6 +107,8 @@ export default function HomePage() {
             path: "/",
             image: featureImage?.src,
             type: "WebPage",
+            datePublished: CARD_PUBLISHED_AT,
+            dateModified: CARD_PUBLISHED_AT,
           }),
           itemListJsonLd(),
           faqPageJsonLd(faqs, "/"),

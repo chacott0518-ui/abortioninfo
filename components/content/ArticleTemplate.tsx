@@ -93,6 +93,8 @@ export function ArticleTemplate({ page }: ArticleTemplateProps) {
       image: page.seo.socialImage || page.seo.ogImage,
       keywords: page.seo.keywords,
       type: "MedicalWebPage",
+      datePublished: page.publishedAt,
+      dateModified: page.updatedAt,
     }),
     breadcrumbJsonLd([
       { name: SITE.shortName, path: "/" },
