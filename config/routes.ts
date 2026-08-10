@@ -6,6 +6,8 @@ export const ROUTES = {
   hospital: "/임신중절수술-병원-선택",
   reviews: "/임신중절수술-후기",
   faq: "/임신중절수술-자주-묻는-질문",
+  preExam: "/임신중절수술-전-검사",
+  earlyGestation: "/임신초기중절수술-주수-확인",
 } as const;
 
 /** 구 URL → 최종 한글 URL 308 permanent redirect */

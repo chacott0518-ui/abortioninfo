@@ -4,6 +4,7 @@ import { ArticleConclusion } from "@/components/content/ArticleConclusion";
 import { HomeContentCards } from "@/components/content/ContentCardGrid";
 import { ExamNoticeBox } from "@/components/content/ExamNoticeBox";
 import { FaqAccordion } from "@/components/content/FaqList";
+import { InfoGuideCards } from "@/components/content/InfoGuideCards";
 import { KeySummaryCards } from "@/components/content/KeySummaryCards";
 import { LongGuideImage } from "@/components/content/LongGuideImage";
 import { PageTocCards } from "@/components/content/PageTocCards";
@@ -39,6 +40,9 @@ export default function HomePage() {
         <div className="cg-container">
           {/* 1. 상단 목차 이미지 카드 6개 */}
           <HomeContentCards />
+
+          {/* 1-b. 핵심 카드 밖의 의료정보 가이드 레이어 */}
+          <InfoGuideCards />
 
           {/* 2. 메인 세로 이미지 */}
           {featureImage?.src ? (

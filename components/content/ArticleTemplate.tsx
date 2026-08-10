@@ -11,6 +11,8 @@ import { HealthInformationNotice } from "@/components/content/HealthInformationN
 import { HubContextLink } from "@/components/content/HubContextLink";
 import { KeySummaryCards } from "@/components/content/KeySummaryCards";
 import { LongGuideImage } from "@/components/content/LongGuideImage";
+import { ClinicRelatedLinks } from "@/components/content/ClinicRelatedLinks";
+import { OfficialSources } from "@/components/content/OfficialSources";
 import {
   PageTocCards,
   SectionTocCards,
@@ -193,9 +195,17 @@ export function ArticleTemplate({ page }: ArticleTemplateProps) {
 
             <RelatedPages currentId={page.id} />
 
+            {page.clinicRelatedLinks && page.clinicRelatedLinks.length > 0 ? (
+              <ClinicRelatedLinks links={page.clinicRelatedLinks} />
+            ) : null}
+
             <PartnershipCTA variant="bottom" />
 
             <HealthInformationNotice />
+
+            {page.officialSources && page.officialSources.length > 0 ? (
+              <OfficialSources sources={page.officialSources} />
+            ) : null}
           </div>
         </div>
       </article>

@@ -1,11 +1,13 @@
 import { CAUTION_FAQS } from "@/content/faqs/caution";
 import { COMMON_FAQS } from "@/content/faqs/common";
 import { COST_FAQS } from "@/content/faqs/cost";
+import { EARLY_GESTATION_FAQS } from "@/content/faqs/early-gestation";
 import { EXTRA_FAQS } from "@/content/faqs/extra";
 import { getHospitalLocationFaqs } from "@/content/faqs/hospital-location";
 import { HOSPITAL_FAQS } from "@/content/faqs/hospital";
 import { HUB_FAQS } from "@/content/faqs/hub";
 import { FAQ_QUESTIONS_30 } from "@/content/faqs/questions-30";
+import { PRE_EXAM_FAQS } from "@/content/faqs/pre-exam";
 import { RECOVERY_FAQS } from "@/content/faqs/recovery";
 import { REVIEW_FAQS } from "@/content/faqs/review";
 import type { FaqItem } from "@/types/faq";
@@ -21,6 +23,8 @@ const ALL_FAQS: FaqItem[] = [
   ...HUB_FAQS,
   ...FAQ_QUESTIONS_30,
   ...getHospitalLocationFaqs(),
+  ...PRE_EXAM_FAQS,
+  ...EARLY_GESTATION_FAQS,
 ];
 
 const FAQ_BY_ID = new Map(ALL_FAQS.map((item) => [item.id, item]));

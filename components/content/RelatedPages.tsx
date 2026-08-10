@@ -2,10 +2,10 @@ import Link from "next/link";
 
 import { ROUTES } from "@/config/routes";
 import { CONTENT_CARDS } from "@/lib/content-registry";
-import type { ContentClusterId } from "@/types/content";
+import type { ContentPageId } from "@/types/content";
 
 type RelatedPagesProps = {
-  currentId?: ContentClusterId;
+  currentId?: ContentPageId;
   /** 홈: 상세 6개만 / 상세: 메인 + 나머지 5개 */
   showAll?: boolean;
 };

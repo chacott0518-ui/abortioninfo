@@ -15,6 +15,11 @@ export type ContentClusterId =
   | "faq"
   | "faqHub";
 
+/** 상단 6개 핵심 카드 밖의 의료정보 가이드 */
+export type InfoGuideId = "preExam" | "earlyGestation";
+
+export type ContentPageId = ContentClusterId | InfoGuideId;
+
 export type ContentImage = {
   src: string;
   alt: string;
@@ -143,7 +148,7 @@ export type ContentCard = {
 };
 
 export type ContentPage = {
-  id: ContentClusterId;
+  id: ContentPageId;
   order: number;
   numberLabel: string;
   slug: string;
@@ -176,13 +181,13 @@ export type ContentPage = {
   seo: PageSeo;
   publishedAt: string;
   updatedAt: string;
-  thumbnail: ContentImage;
+  thumbnail?: ContentImage | null;
   /** H1 아래 상단 대표 이미지 (보통 1장) */
-  topImages: ContentImage[];
+  topImages?: ContentImage[];
   /** 첫 제휴 CTA 아래·질문형 H2 위에 두는 본문 이미지 */
   bodyImage?: ContentImage | null;
   /** @deprecated topImages 우선 */
-  heroImage: ContentImage;
+  heroImage?: ContentImage | null;
   /** @deprecated bodyImage / topImages 우선 */
   secondaryImage?: ContentImage | null;
   /**
@@ -208,6 +213,14 @@ export type ContentPage = {
   keySummary?: KeySummaryEntry[];
   /** 번호형 목차 짧은 설명 (id → description) */
   tocDescriptions?: Record<string, string>;
+  /** 홈 ‘관련 정보’ 카드용 짧은 주제 라벨 */
+  infoTopicLabel?: string;
+  /** 홈 카드 2줄 설명 */
+  infoCardDescription?: string;
+  /** 연세365 공식 사이트 관련 문서 (본문 하단) */
+  clinicRelatedLinks?: ExternalRelatedLink[];
+  /** 공식 출처 및 참고자료 (최하단 details) */
+  officialSources?: OfficialSource[];
 };
 
 export type KeySummaryEntry = {
@@ -221,6 +234,30 @@ export type HubContextLink = {
   before: string;
   anchor: string;
   after: string;
+};
+
+/** 외부 관련 문서 링크 (연세365 등) */
+export type ExternalRelatedLink = {
+  label: string;
+  href: string;
+};
+
+/** 공식 출처·참고자료 */
+export type OfficialSource = {
+  organization: string;
+  title: string;
+  url: string;
+};
+
+/** 홈 ‘임신중절수술 관련 정보’ 카드 */
+export type InfoGuideCard = {
+  id: InfoGuideId;
+  href: string;
+  topicLabel: string;
+  title: string;
+  description: string;
+  publishedAt: string;
+  topicName: string;
 };
 
 export type HomeIntro = {
