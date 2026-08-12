@@ -85,6 +85,16 @@ export function Header() {
                 </a>
               ) : null}
 
+              <a
+                className="cg-action-btn cg-header-reserve"
+                href="https://www.yeonsei365.com/?consult=1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                간편예약
+                <span aria-hidden="true">→</span>
+              </a>
+
               <button
                 type="button"
                 className={`cg-header-menu-button ${menuOpen ? "is-open" : ""}`}

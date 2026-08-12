@@ -32,6 +32,13 @@
   --cg-phone-bg: #f97316;
   --cg-phone-text: #ffffff;
 
+  /* CTA / 플로팅 버튼 공통 컬러 — 딥 로즈 계열 (헤더·모바일 하단바 전용) */
+  --cg-cta-rose: #b93a68;
+  --cg-cta-rose-dark: #8f274e;
+  --cg-cta-rose-bg-light: #f8e9ef;
+  --cg-cta-rose-text: #ffffff;
+  --cg-cta-rose-divider: rgba(255, 255, 255, 0.22);
+
   /* 메뉴 라벨용 — 채도 낮춘 파스텔 */
   --cg-accent-orange: rgba(255, 107, 22, 0.1);
   --cg-accent-pink: rgba(237, 169, 213, 0.18);
@@ -2191,10 +2198,10 @@ img {
     z-index: 60;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    gap: 0;
     height: auto;
     padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
-    background: rgba(245, 243, 239, 0.98);
+    background: var(--cg-cta-rose);
   }
 
   .cg-mobile-bar__btn {
@@ -2208,30 +2215,23 @@ img {
     font-weight: var(--fw-semibold);
     flex-direction: column;
     word-break: keep-all;
+    background: var(--cg-cta-rose);
+    color: var(--cg-cta-rose-text);
   }
 
-  .cg-mobile-bar__btn--kakao {
-    background: var(--cg-action-bg);
-    color: var(--cg-action-text);
+  .cg-mobile-bar__btn + .cg-mobile-bar__btn {
+    border-left: 1px solid var(--cg-cta-rose-divider);
   }
 
-  .cg-mobile-bar__btn--kakao:active {
-    background: var(--cg-action-bg-active);
+  .cg-mobile-bar__btn:active {
+    background: var(--cg-cta-rose-dark);
   }
 
-  .cg-mobile-bar__btn--kakao:focus-visible {
-    outline: 2px solid var(--cg-link);
-    outline-offset: 2px;
-  }
-
-  .cg-mobile-bar__btn--phone {
-    background: var(--cg-phone-bg);
-    color: var(--cg-phone-text);
-  }
-
-  .cg-mobile-bar__btn--map {
-    background: color-mix(in srgb, var(--cg-lavender, #ede8f5) 80%, white);
-    color: var(--cg-ink);
+  .cg-mobile-bar__btn--kakao:focus-visible,
+  .cg-mobile-bar__btn--phone:focus-visible,
+  .cg-mobile-bar__btn--map:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
   }
 }
 
