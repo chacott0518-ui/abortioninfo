@@ -11,29 +11,42 @@ function formatCardDate(isoDate: string): string {
 
 type InfoGuideCardsProps = {
   cards?: InfoGuideCard[];
+  title?: string;
+  subtitle?: string;
+  headingId?: string;
+  headingLevel?: "h2" | "h3";
+  moreHref?: string;
+  moreLabel?: string;
 };
 
 /**
  * 메인 6개 핵심 카드 밖의 ‘임신중절수술 관련 정보’ 레이어.
  * GNB/CONTENT_CARDS와 분리되어 데이터 추가만으로 카드가 늘어난다.
+ * 정보허브(`/의료정보`) 카테고리별 리스트에도 동일 컴포넌트를 재사용한다.
  */
 export function InfoGuideCards({
   cards = INFO_GUIDE_CARDS,
+  title = "임신중절수술 관련 정보",
+  subtitle = "상담 전 확인할 내용을 주제별로 정리한 의료정보 가이드입니다.",
+  headingId = "info-guides-heading",
+  headingLevel = "h2",
+  moreHref,
+  moreLabel = "의료정보 전체보기",
 }: InfoGuideCardsProps) {
   if (cards.length === 0) return null;
+
+  const HeadingTag = headingLevel;
 
   return (
     <section
       className="cg-info-guides"
-      aria-labelledby="info-guides-heading"
+      aria-labelledby={headingId}
     >
       <header className="cg-info-guides__header">
-        <h2 id="info-guides-heading" className="cg-info-guides__title">
-          임신중절수술 관련 정보
-        </h2>
-        <p className="cg-info-guides__subtitle">
-          상담 전 확인할 내용을 주제별로 정리한 의료정보 가이드입니다.
-        </p>
+        <HeadingTag id={headingId} className="cg-info-guides__title">
+          {title}
+        </HeadingTag>
+        {subtitle ? <p className="cg-info-guides__subtitle">{subtitle}</p> : null}
       </header>
 
       <ul className="cg-info-guides__list">
@@ -54,6 +67,13 @@ export function InfoGuideCards({
           </li>
         ))}
       </ul>
+
+      {moreHref ? (
+        <Link className="cg-info-guides__all-link" href={moreHref} scroll>
+          {moreLabel}
+          <span aria-hidden="true"> →</span>
+        </Link>
+      ) : null}
     </section>
   );
 }

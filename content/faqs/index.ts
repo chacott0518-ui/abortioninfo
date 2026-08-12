@@ -1,15 +1,37 @@
+import { AFTER_DAILY_LIFE_FAQS } from "@/content/faqs/after-daily-life";
+import { AFTER_SYMPTOMS_FAQS } from "@/content/faqs/after-symptoms";
+import { BOOKING_CHECKLIST_FAQS } from "@/content/faqs/booking-checklist";
 import { CAUTION_FAQS } from "@/content/faqs/caution";
 import { COMMON_FAQS } from "@/content/faqs/common";
+import { CONSULT_PRIVACY_FAQS } from "@/content/faqs/consult-privacy";
+import { CONTRACEPTION_TIMING_FAQS } from "@/content/faqs/contraception-timing";
 import { COST_FAQS } from "@/content/faqs/cost";
+import { DAY_PROCEDURE_FAQS } from "@/content/faqs/day-procedure";
+import { DECISION_TAKE_TIME_FAQS } from "@/content/faqs/decision-take-time";
 import { EARLY_GESTATION_FAQS } from "@/content/faqs/early-gestation";
+import { EMOTIONAL_CHANGE_FAQS } from "@/content/faqs/emotional-change";
 import { EXTRA_FAQS } from "@/content/faqs/extra";
 import { getHospitalLocationFaqs } from "@/content/faqs/hospital-location";
 import { HOSPITAL_FAQS } from "@/content/faqs/hospital";
 import { HUB_FAQS } from "@/content/faqs/hub";
+import { MEDICATION_DISCLOSURE_FAQS } from "@/content/faqs/medication-disclosure";
+import { MINOR_CONSULT_FAQS } from "@/content/faqs/minor-consult";
+import { MYTHS_FACTS_FAQS } from "@/content/faqs/myths-facts";
+import { NEXT_PREGNANCY_PLANNING_FAQS } from "@/content/faqs/next-pregnancy-planning";
+import { OVULATION_RETURN_FAQS } from "@/content/faqs/ovulation-return";
+import { PAIN_CHANGE_FAQS } from "@/content/faqs/pain-change";
+import { PARTNER_FAMILY_CONSULT_FAQS } from "@/content/faqs/partner-family-consult";
+import { PERIOD_RETURN_FAQS } from "@/content/faqs/period-return";
+import { PRE_PROCEDURE_ANXIETY_FAQS } from "@/content/faqs/pre-procedure-anxiety";
+import { PROCEDURE_METHODS_FAQS } from "@/content/faqs/procedure-methods";
 import { FAQ_QUESTIONS_30 } from "@/content/faqs/questions-30";
 import { PRE_EXAM_FAQS } from "@/content/faqs/pre-exam";
 import { RECOVERY_FAQS } from "@/content/faqs/recovery";
+import { RECOVERY_JOURNAL_FAQS } from "@/content/faqs/recovery-journal";
+import { RELIABLE_INFO_SOURCES_FAQS } from "@/content/faqs/reliable-info-sources";
 import { REVIEW_FAQS } from "@/content/faqs/review";
+import { SLEEP_ANESTHESIA_FAQS } from "@/content/faqs/sleep-anesthesia";
+import { TERMS_GLOSSARY_FAQS } from "@/content/faqs/terms-glossary";
 import type { FaqItem } from "@/types/faq";
 
 const ALL_FAQS: FaqItem[] = [
@@ -25,6 +47,28 @@ const ALL_FAQS: FaqItem[] = [
   ...getHospitalLocationFaqs(),
   ...PRE_EXAM_FAQS,
   ...EARLY_GESTATION_FAQS,
+  ...DAY_PROCEDURE_FAQS,
+  ...SLEEP_ANESTHESIA_FAQS,
+  ...PROCEDURE_METHODS_FAQS,
+  ...AFTER_SYMPTOMS_FAQS,
+  ...AFTER_DAILY_LIFE_FAQS,
+  ...BOOKING_CHECKLIST_FAQS,
+  ...CONSULT_PRIVACY_FAQS,
+  ...MEDICATION_DISCLOSURE_FAQS,
+  ...PAIN_CHANGE_FAQS,
+  ...PERIOD_RETURN_FAQS,
+  ...OVULATION_RETURN_FAQS,
+  ...CONTRACEPTION_TIMING_FAQS,
+  ...EMOTIONAL_CHANGE_FAQS,
+  ...MINOR_CONSULT_FAQS,
+  ...TERMS_GLOSSARY_FAQS,
+  ...PRE_PROCEDURE_ANXIETY_FAQS,
+  ...NEXT_PREGNANCY_PLANNING_FAQS,
+  ...RELIABLE_INFO_SOURCES_FAQS,
+  ...RECOVERY_JOURNAL_FAQS,
+  ...MYTHS_FACTS_FAQS,
+  ...DECISION_TAKE_TIME_FAQS,
+  ...PARTNER_FAMILY_CONSULT_FAQS,
 ];
 
 const FAQ_BY_ID = new Map(ALL_FAQS.map((item) => [item.id, item]));

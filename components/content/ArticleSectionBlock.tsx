@@ -92,13 +92,15 @@ export function ArticleSectionBlock({
       className={`cg-article-section${className ? ` ${className}` : ""}`}
       aria-labelledby={`${section.id}-heading`}
     >
-      {showNumbers && section.numberLabel ? (
-        <p className="cg-article-section__num">{section.numberLabel}</p>
-      ) : null}
       <HeadingTag id={`${section.id}-heading`}>
         <span className="cg-article-section__icon" aria-hidden="true">
           {icon}
         </span>
+        {showNumbers && section.numberLabel ? (
+          <span className="cg-article-section__num" aria-hidden="true">
+            {section.numberLabel}
+          </span>
+        ) : null}
         <span className="cg-article-section__heading-text">
           {section.heading}
         </span>

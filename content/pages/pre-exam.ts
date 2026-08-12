@@ -19,6 +19,7 @@ export const PRE_EXAM_PAGE: ContentPage = {
   heading: "임신중절수술 전 검사, 무엇을 확인하나요?",
   breadcrumbLabel: "임신중절수술 전 검사",
   infoTopicLabel: "검사·상담 준비",
+  infoCategory: "exam",
   infoCardDescription:
     "상담 전에 정리할 정보와 검사 결과를 확인할 때 물어보면 좋은 질문을 안내합니다.",
   intro: [

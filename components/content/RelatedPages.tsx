@@ -43,6 +43,7 @@ export function RelatedPages({ currentId, showAll = false }: RelatedPagesProps) 
   return (
     <nav className="cg-related-btns" aria-labelledby="related-pages-title">
       <h2 id="related-pages-title" className="cg-related-btns__title">
+        <span aria-hidden="true">📖 </span>
         관련 콘텐츠
       </h2>
       <ul className="cg-related-btns__list">

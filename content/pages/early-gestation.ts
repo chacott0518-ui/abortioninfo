@@ -19,6 +19,7 @@ export const EARLY_GESTATION_PAGE: ContentPage = {
   heading: "임신초기중절수술, 주수와 건강상태는 어떻게 확인하나요?",
   breadcrumbLabel: "임신초기중절수술 주수 확인",
   infoTopicLabel: "주수·건강상태",
+  infoCategory: "exam",
   infoCardDescription:
     "임신 초기라는 표현만으로 방법을 단정하지 않고, 주수와 건강상태를 함께 확인하는 관점을 안내합니다.",
   intro: [

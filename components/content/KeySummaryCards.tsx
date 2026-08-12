@@ -26,10 +26,12 @@ export function KeySummaryCards({
       <ol className="cg-key-summary__grid">
         {items.map((item) => (
           <li key={item.numberLabel} className="cg-key-summary__card">
-            <span className="cg-key-summary__num" aria-hidden="true">
-              {item.numberLabel}
+            <span className="cg-key-summary__head">
+              <span className="cg-key-summary__num" aria-hidden="true">
+                {item.numberLabel}
+              </span>
+              <strong className="cg-key-summary__title">{item.title}</strong>
             </span>
-            <strong className="cg-key-summary__title">{item.title}</strong>
             <p className="cg-key-summary__text">{item.text}</p>
           </li>
         ))}

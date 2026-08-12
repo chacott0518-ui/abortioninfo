@@ -17,7 +17,10 @@ export function OfficialSources({
 
   return (
     <details className="cg-official-sources">
-      <summary className="cg-official-sources__summary">{summaryLabel}</summary>
+      <summary className="cg-official-sources__summary">
+        <span aria-hidden="true">📚 </span>
+        {summaryLabel}
+      </summary>
       <ul className="cg-official-sources__list">
         {sources.map((source) => (
           <li key={source.url} className="cg-official-sources__item">

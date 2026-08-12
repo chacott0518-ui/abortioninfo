@@ -16,9 +16,42 @@ export type ContentClusterId =
   | "faqHub";
 
 /** 상단 6개 핵심 카드 밖의 의료정보 가이드 */
-export type InfoGuideId = "preExam" | "earlyGestation";
+export type InfoGuideId =
+  | "preExam"
+  | "earlyGestation"
+  | "dayProcedure"
+  | "sleepAnesthesia"
+  | "procedureMethods"
+  | "afterSymptoms"
+  | "afterDailyLife"
+  | "bookingChecklist"
+  | "consultPrivacy"
+  | "medicationDisclosure"
+  | "painChange"
+  | "periodReturn"
+  | "ovulationReturn"
+  | "contraceptionTiming"
+  | "emotionalChange"
+  | "minorConsult"
+  | "termsGlossary"
+  | "preProcedureAnxiety"
+  | "nextPregnancyPlanning"
+  | "reliableInfoSources"
+  | "recoveryJournal"
+  | "mythsFacts"
+  | "decisionTakeTime"
+  | "partnerFamilyConsult";
 
 export type ContentPageId = ContentClusterId | InfoGuideId;
+
+/** 의료정보 가이드 카테고리 (정보허브 필터·그룹핑용) */
+export type InfoCategory =
+  | "exam"
+  | "consult"
+  | "surgery"
+  | "recovery"
+  | "hospital"
+  | "understand";
 
 export type ContentImage = {
   src: string;
@@ -217,6 +250,8 @@ export type ContentPage = {
   infoTopicLabel?: string;
   /** 홈 카드 2줄 설명 */
   infoCardDescription?: string;
+  /** 정보허브 카테고리 (InfoGuideId 페이지 전용) */
+  infoCategory?: InfoCategory;
   /** 연세365 공식 사이트 관련 문서 (본문 하단) */
   clinicRelatedLinks?: ExternalRelatedLink[];
   /** 공식 출처 및 참고자료 (최하단 details) */
@@ -258,6 +293,7 @@ export type InfoGuideCard = {
   description: string;
   publishedAt: string;
   topicName: string;
+  infoCategory?: InfoCategory;
 };
 
 export type HomeIntro = {

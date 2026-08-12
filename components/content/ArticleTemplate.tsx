@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 
 import { PartnershipCTA } from "@/components/advertising/AdInquiryBanner";
@@ -20,6 +21,7 @@ import {
 import { RelatedPages } from "@/components/content/RelatedPages";
 import { ClinicMap } from "@/components/contact/ClinicMap";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ROUTES } from "@/config/routes";
 import { SITE } from "@/config/site";
 import { getFaqsByIds, getPageFaqs } from "@/lib/content-registry";
 import {
@@ -160,10 +162,7 @@ export function ArticleTemplate({ page }: ArticleTemplateProps) {
           <ArticleIntro paragraphs={page.intro} />
 
           {page.keySummary && page.keySummary.length > 0 ? (
-            <KeySummaryCards
-              title={`${displayH1} 핵심요약`}
-              items={page.keySummary}
-            />
+            <KeySummaryCards title="✅ 핵심요약" items={page.keySummary} />
           ) : null}
 
           {page.hubContextLink ? (
@@ -194,6 +193,13 @@ export function ArticleTemplate({ page }: ArticleTemplateProps) {
             ) : null}
 
             <RelatedPages currentId={page.id} />
+
+            {page.infoCategory ? (
+              <Link href={ROUTES.infoHub} className="cg-back-to-hub">
+                <span aria-hidden="true">← </span>
+                의료정보 전체보기
+              </Link>
+            ) : null}
 
             {page.clinicRelatedLinks && page.clinicRelatedLinks.length > 0 ? (
               <ClinicRelatedLinks links={page.clinicRelatedLinks} />

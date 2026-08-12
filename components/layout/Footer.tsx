@@ -1,7 +1,9 @@
 import Link from "next/link";
 
+import { CONTACT } from "@/config/contact";
 import { LEGAL } from "@/config/legal";
 import { topicConfig } from "@/config/topic";
+import { YEONSEI365_LINKS } from "@/content/info/shared";
 
 const legalLinks = [
   { key: "privacyPolicy", label: "개인정보 처리방침" },
@@ -23,13 +25,21 @@ export function Footer() {
         <p className="cg-footer__copy">
           © 2026 {topicConfig.siteName} · {topicConfig.operatorName}
         </p>
-        <p className="cg-footer__blog">Web blog.</p>
-        <p className="cg-footer__note">
-          본 콘텐츠는 일반적인 건강정보 제공을 목적으로 하며,
-          <br />
-          개인의 진단이나 치료를 대신하지 않습니다.
-          <br />
-          증상과 상태에 따라 의료진의 진료가 필요할 수 있습니다.
+        <p className="cg-footer__contact">
+          <a
+            className="cg-footer__contact-link"
+            href={YEONSEI365_LINKS.clinic}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            공식 홈페이지 바로가기
+            <span aria-hidden="true"> →</span>
+          </a>
+          <span className="cg-footer__contact-address">{CONTACT.address}</span>
+        </p>
+        <p className="cg-footer__blog">
+          {topicConfig.siteName}은 {CONTACT.clinicName}이 제공하는
+          임신중절수술 관련 일반 의료정보 사이트입니다.
         </p>
         {enabledLinks.length > 0 ? (
           <nav className="cg-footer__legal" aria-label="법률 문서">

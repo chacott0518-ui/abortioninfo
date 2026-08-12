@@ -72,7 +72,10 @@ export function FaqAccordion({
           {numberLabel ? (
             <p className="cg-article-section__num">{numberLabel}</p>
           ) : null}
-          <h2 id={`${id}-title`}>{title}</h2>
+          <h2 id={`${id}-title`}>
+            <span aria-hidden="true">💬 </span>
+            {title}
+          </h2>
         </div>
       ) : null}
       <div className="cg-faq-list">

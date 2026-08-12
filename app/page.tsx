@@ -11,8 +11,10 @@ import { PageTocCards } from "@/components/content/PageTocCards";
 import { RelatedPages } from "@/components/content/RelatedPages";
 import { ClinicMap } from "@/components/contact/ClinicMap";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ROUTES } from "@/config/routes";
 import { SITE } from "@/config/site";
 import { getFaqsByIds } from "@/content/faqs";
+import { HOME_INFO_GUIDE_CARDS } from "@/content/info";
 import {
   HOME_CONCLUSION,
   HOME_EXAM_NOTICE,
@@ -41,8 +43,11 @@ export default function HomePage() {
           {/* 1. 상단 목차 이미지 카드 6개 */}
           <HomeContentCards />
 
-          {/* 1-b. 핵심 카드 밖의 의료정보 가이드 레이어 */}
-          <InfoGuideCards />
+          {/* 1-b. 핵심 카드 밖의 의료정보 가이드 레이어 (대표 4개 + 전체보기) */}
+          <InfoGuideCards
+            cards={HOME_INFO_GUIDE_CARDS}
+            moreHref={ROUTES.infoHub}
+          />
 
           {/* 2. 메인 세로 이미지 */}
           {featureImage?.src ? (

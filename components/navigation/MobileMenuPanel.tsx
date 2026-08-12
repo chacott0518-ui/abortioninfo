@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { MenuIcon } from "@/components/icons/MenuIcon";
 import { contentUiConfig } from "@/config/content-ui";
+import { ROUTES } from "@/config/routes";
 import { topicConfig } from "@/config/topic";
 import { CONTENT_CARDS } from "@/lib/content-registry";
 
@@ -54,6 +55,17 @@ export function MobileMenuPanel({
             );
           })}
         </div>
+
+        <Link
+          href={ROUTES.infoHub}
+          scroll
+          className="cg-mobile-panel__all-link"
+          onClick={onNavigate}
+          aria-current={activePath === ROUTES.infoHub ? "page" : undefined}
+        >
+          📖 의료정보 전체보기
+          <span aria-hidden="true"> →</span>
+        </Link>
       </div>
     </div>
   );
