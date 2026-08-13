@@ -47,6 +47,7 @@ function TopicGuideCards({
                   height={card.image.height || 1254}
                   sizes="(max-width: 899px) 50vw, 33vw"
                   priority={index < 3}
+                  unoptimized
                   style={{ objectFit: "contain" }}
                 />
               </span>

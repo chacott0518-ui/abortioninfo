@@ -47,6 +47,7 @@ export function ContentCard({
               : "(max-width: 639px) 100vw, (max-width: 899px) 50vw, 33vw"
           }
           priority={priority}
+          unoptimized
           style={{ objectFit: compact ? "contain" : "cover" }}
         />
       </span>

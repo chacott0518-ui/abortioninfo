@@ -53,6 +53,7 @@ function PageSquareThumb({
         sizes="(max-width: 768px) calc(100vw - 32px), 560px"
         quality={90}
         priority={priority}
+        unoptimized
         className="cg-page-thumb__img"
         style={{ objectFit: "contain" }}
       />
