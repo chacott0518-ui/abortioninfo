@@ -4,7 +4,7 @@ import { ROUTES } from "@/config/routes";
 import { CONTENT_PAGES } from "@/content/pages";
 import { absoluteUrl } from "@/lib/site-url";
 
-const HOME_LAST_MODIFIED = "2026-07-27";
+const HOME_LAST_MODIFIED = "2026-08-25";
 const INFO_HUB_LAST_MODIFIED = "2026-08-12";
 
 /**

@@ -117,7 +117,7 @@ export default function HomePage() {
             image: featureImage?.src,
             type: "WebPage",
             datePublished: CARD_PUBLISHED_AT,
-            dateModified: CARD_PUBLISHED_AT,
+            dateModified: "2026-08-25",
           }),
           itemListJsonLd(),
           faqPageJsonLd(faqs, "/"),

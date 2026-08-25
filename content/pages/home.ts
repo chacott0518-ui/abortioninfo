@@ -35,7 +35,7 @@ export const HOME_INTRO: HomeIntro = {
   featureImage: HOME_FEATURE_IMAGE,
   paragraphs: [
     "임신중절수술은 임신을 지속하기 어려운 상황에서 산부인과 의료진의 진찰과 상담을 통해 진행 여부와 적절한 진료 과정을 결정하는 의료 절차입니다. 임신 주수와 현재 건강 상태, 복용 중인 약물과 과거 병력에 따라 필요한 검사와 상담 내용이 달라질 수 있습니다.",
-    "임신 중절수술 가능 여부나 비용만 비교하기보다 현재 임신 상태, 검사 범위, 회복 과정, 수술 후 이상 증상에 대응할 수 있는 진료 체계까지 함께 확인하는 것이 중요합니다.",
+    "검색에서는 임신중절이나 중절수술처럼 표현이 나뉘기도 하지만, 실제 판단은 임신 주수와 현재 상태를 확인한 뒤에 이루어집니다. 임신 중절수술 가능 여부나 비용만 비교하기보다 검사 범위, 회복 과정, 이상 증상 대응까지 함께 확인하는 것이 중요합니다.",
   ],
   summary:
     "상담 전에는 임신 상태 확인, 비용 구성, 회복 관리, 사후진료 가능 여부를 함께 점검하는 것이 도움이 됩니다.",
@@ -131,37 +131,37 @@ export const HOME_TOC = [
   {
     id: "home-checklist",
     numberLabel: "02",
-    label: "상담 전 무엇을 준비해야 하나요?",
+    label: "임신중절 상담 전 무엇을 준비해야 하나요?",
     description: "생리일·약·병력 체크리스트",
   },
   {
     id: "home-timing",
     numberLabel: "03",
-    label: "임신 주수와 가능 시기는 어떻게 확인하나요?",
+    label: "임신 중절수술 가능 시기는 어떻게 확인하나요?",
     description: "검사와 상담 단계",
   },
   {
     id: "home-cost",
     numberLabel: "04",
-    label: "비용은 어떤 기준으로 달라지나요?",
+    label: "임신중절수술 비용은 어떤 기준으로 달라지나요?",
     description: "주수·검사·마취·사후진료",
   },
   {
     id: "home-recovery",
     numberLabel: "05",
-    label: "회복기간에는 무엇을 확인해야 하나요?",
+    label: "임신 중절 수술 후 회복은 어떻게 진행되나요?",
     description: "회복 흐름과 생활관리",
   },
   {
     id: "home-precautions",
     numberLabel: "06",
-    label: "수술 전후 주의사항은 무엇인가요?",
+    label: "중절수술 전후 주의사항은 무엇인가요?",
     description: "준비와 회복 중 주의점",
   },
   {
     id: "home-hospital",
     numberLabel: "07",
-    label: "병원은 어떤 기준으로 선택해야 하나요?",
+    label: "임신중절수술 병원 선택 시 무엇을 확인하나요?",
     description: "상담·검사·사후관리",
   },
   {
@@ -182,22 +182,22 @@ export const HOME_SECTIONS: ArticleSection[] = [
     directAnswer:
       "임신중절수술은 임신을 지속하기 어려운 상황에서 산부인과 의료진의 진찰과 상담을 통해 진행 여부와 적절한 진료 과정을 결정하는 의료 절차입니다.",
     paragraphs: [
-      "임신 주수, 현재 증상, 과거 질환, 수술 이력과 복용 중인 약물에 따라 필요한 검사와 상담 내용이 달라질 수 있으므로 개인별 확인이 필요합니다.",
-      "가능 여부만 묻기보다 검사 범위, 회복 과정, 이상 증상 대응까지 함께 확인할 수 있는 진료 체계인지도 살펴보는 것이 도움이 됩니다.",
+      "임신중절이나 중절수술로 검색되는 표현도 같은 진료를 가리키는 경우가 많습니다. 임신 주수, 현재 증상, 과거 질환, 수술 이력과 복용 중인 약물에 따라 필요한 검사와 상담 내용이 달라질 수 있으므로 개인별 확인이 필요합니다.",
+      "가능 여부만 묻기보다 검사 범위, 회복 과정, 이상 증상 대응까지 함께 확인할 수 있는 진료 체계인지도 살펴보는 것이 도움이 됩니다. 당일 진행 순서는 아래에서 요약하고, 세부 단계는 당일 절차 안내에서 확인할 수 있습니다.",
     ],
-    relatedHref: ROUTES.precautions,
-    relatedLabel: "임신중절수술 주의사항 자세히 보기",
+    relatedHref: ROUTES.dayProcedure,
+    relatedLabel: "중절수술 당일 절차 안내",
   },
   {
     id: "home-checklist",
     order: 2,
     numberLabel: "02",
-    heading: "상담 전 무엇을 준비해야 하나요?",
+    heading: "임신중절 상담 전 무엇을 준비해야 하나요?",
     layout: "checklist",
     directAnswer:
       "마지막 생리 시작일, 생리주기, 임신테스트 결과, 현재 증상, 복용 약과 기존 질환을 미리 정리해 두면 상담을 더 정확하게 진행할 수 있습니다.",
     paragraphs: [
-      "검사비·마취비·사후진료 포함 여부를 구분해 질문해 두면 비용 비교에도 도움이 됩니다.",
+      "검사비·마취비·사후진료 포함 여부를 구분해 질문해 두면 비용 비교에도 도움이 됩니다. 검사에서 무엇을 확인하는지는 전 검사 안내에서 더 자세히 볼 수 있습니다.",
     ],
     bullets: [
       "마지막 생리 시작일",
@@ -208,14 +208,14 @@ export const HOME_SECTIONS: ArticleSection[] = [
       "기존 질환·수술 이력·알레르기",
       "검사비·마취비·사후진료 포함 여부",
     ],
-    relatedHref: ROUTES.hospital,
-    relatedLabel: "임신중절수술 병원 선택 자세히 보기",
+    relatedHref: ROUTES.preExam,
+    relatedLabel: "임신중절수술 전 검사 안내",
   },
   {
     id: "home-timing",
     order: 3,
     numberLabel: "03",
-    heading: "임신 주수와 가능 시기는 어떻게 확인하나요?",
+    heading: "임신 중절수술 가능 시기는 어떻게 확인하나요?",
     layout: "steps",
     directAnswer:
       "가능 시기는 마지막 생리일만으로 확정하기 어렵고, 초음파 등 검사를 통해 임신 상태를 확인한 뒤 의료진과 상담하는 과정이 필요합니다.",
@@ -244,17 +244,17 @@ export const HOME_SECTIONS: ArticleSection[] = [
         text: "회복 중 주의점과 이상 증상 발생 시 연락 방법을 미리 확인합니다.",
       },
     ],
-    relatedHref: ROUTES.cost,
-    relatedLabel: "임신중절수술 비용 자세히 보기",
+    relatedHref: ROUTES.preExam,
+    relatedLabel: "임신 중절수술 전 검사 확인사항",
   },
   {
     id: "home-cost",
     order: 4,
     numberLabel: "04",
-    heading: "비용은 어떤 기준으로 달라지나요?",
+    heading: "임신중절수술 비용은 어떤 기준으로 달라지나요?",
     layout: "responsive-table",
     directAnswer:
-      "비용은 임신 주수, 검사 범위, 마취 방식, 진료 포함 항목과 사후진료 구성에 따라 달라질 수 있습니다. 전국 공통의 확정 금액은 없습니다.",
+      "임신중절수술 비용은 임신 주수, 검사 범위, 마취 방식, 진료 포함 항목과 사후진료 구성에 따라 달라질 수 있습니다. 전국 공통의 확정 금액은 없습니다.",
     paragraphs: [
       "같은 명칭의 진료라도 포함 항목이 다르면 총액만으로 비교하기 어렵습니다. 견적에서 검사비·마취비·진료비·사후진료 비용을 구분해 확인하는 것이 좋습니다.",
     ],
@@ -299,7 +299,7 @@ export const HOME_SECTIONS: ArticleSection[] = [
     id: "home-recovery",
     order: 5,
     numberLabel: "05",
-    heading: "회복기간에는 무엇을 확인해야 하나요?",
+    heading: "임신 중절 수술 후 회복은 어떻게 진행되나요?",
     layout: "timeline",
     directAnswer:
       "회복 속도와 일상 복귀 시점은 개인차와 진료 방법, 몸 상태에 따라 달라질 수 있으므로 모든 사람에게 동일한 날짜를 단정할 수 없습니다.",
@@ -331,7 +331,7 @@ export const HOME_SECTIONS: ArticleSection[] = [
     id: "home-precautions",
     order: 6,
     numberLabel: "06",
-    heading: "수술 전후 주의사항은 무엇인가요?",
+    heading: "중절수술 전후 주의사항은 무엇인가요?",
     layout: "comparison",
     directAnswer:
       "수술 전에는 복용 약과 병력을 알리고, 수술 후에는 출혈·통증 변화와 생활 제한 안내를 확인하는 것이 중요합니다.",
@@ -355,12 +355,12 @@ export const HOME_SECTIONS: ArticleSection[] = [
     id: "home-hospital",
     order: 7,
     numberLabel: "07",
-    heading: "병원은 어떤 기준으로 선택해야 하나요?",
+    heading: "임신중절수술 병원 선택 시 무엇을 확인하나요?",
     layout: "checklist",
     directAnswer:
       "의료진 설명 명확성, 검사 범위, 비용 안내 투명성, 사후관리와 이상 증상 시 연락 방법을 기준으로 비교하는 편이 도움이 됩니다.",
     paragraphs: [
-      "상담부터 경과 확인까지 이어지는지, 질문할 시간이 충분한지를 함께 확인하세요. 광고 문구나 후기만으로 결정하기보다 본인 상태에 맞는 설명을 직접 듣는 과정이 중요합니다.",
+      "임신중절 수술은 검사 설명, 비용 안내, 사후관리 방식이 의료기관마다 다를 수 있습니다. 상담부터 경과 확인까지 이어지는지, 질문할 시간이 충분한지를 함께 확인하세요. 광고 문구나 후기만으로 결정하기보다 본인 상태에 맞는 설명을 직접 듣는 과정이 중요합니다.",
     ],
     bullets: [
       "산부인과 의료진의 직접 상담 여부",

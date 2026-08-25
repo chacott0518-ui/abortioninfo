@@ -42,6 +42,13 @@ export const metadata: Metadata = {
     absolute: HOME_SEO.title,
   },
 
+  alternates: {
+    ...baseMetadata.alternates,
+    types: {
+      "application/rss+xml": "/rss.xml",
+    },
+  },
+
   verification: {
     other: {
       "naver-site-verification":
