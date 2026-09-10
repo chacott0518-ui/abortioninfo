@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileContactBar } from "@/components/layout/MobilePhoneBar";
 import { ScrollToTopOnNavigate } from "@/components/layout/ScrollToTopOnNavigate";
+import { ChuseokNoticeModal } from "@/components/notice/ChuseokNoticeModal";
 import { HOME_SEO } from "@/content/pages/home";
 import { SITE } from "@/config/site";
 import {
@@ -102,6 +103,7 @@ export default function RootLayout({
 
         <Footer />
         <MobileContactBar />
+        <ChuseokNoticeModal />
       </body>
     </html>
   );
