@@ -10,19 +10,15 @@ const STORAGE_KEY = "abortioninfo:chuseok-notice-hide-until";
 const CONSULT_URL = "https://www.yeonsei365.com/?consult=1";
 
 /**
- * PRODUCTION 노출 구간 (Asia/Seoul)
- * - 시작: 2026-09-17 09:00:00 KST = 2026-09-17 00:00:00 UTC
+ * 노출 구간 (Asia/Seoul)
+ * - 시작: 2026-09-17 00:00:00 KST = 2026-09-16 15:00:00 UTC
  * - 종료 포함: 2026-09-27 23:59:59 KST
  * - 미노출: 2026-09-28 00:00:00 KST = 2026-09-27 15:00:00 UTC 부터
  */
-const WINDOW_START_UTC_MS = Date.UTC(2026, 8, 17, 0, 0, 0);
+const WINDOW_START_UTC_MS = Date.UTC(2026, 8, 16, 15, 0, 0);
 const WINDOW_END_EXCLUSIVE_UTC_MS = Date.UTC(2026, 8, 27, 15, 0, 0);
 
-function isPreviewMode(): boolean {
-  return process.env.NODE_ENV !== "production";
-}
-
-function isWithinProductionWindow(nowMs: number = Date.now()): boolean {
+function isWithinDisplayWindow(nowMs: number = Date.now()): boolean {
   return nowMs >= WINDOW_START_UTC_MS && nowMs < WINDOW_END_EXCLUSIVE_UTC_MS;
 }
 
@@ -60,8 +56,7 @@ export function ChuseokNoticeModal() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const preview = isPreviewMode();
-    if (!preview && !isWithinProductionWindow()) {
+    if (!isWithinDisplayWindow()) {
       setOpen(false);
       return;
     }

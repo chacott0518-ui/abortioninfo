@@ -30,6 +30,10 @@ export const ROUTES = {
   mythsFacts: "/임신중절수술-오해와-사실",
   decisionTakeTime: "/임신중절수술-상담-결정-미루기",
   partnerFamilyConsult: "/임신중절수술-상담-배우자-가족",
+  hospitalConsultCheck: "/임신중절수술병원-상담-전-확인사항",
+  hospitalExamGestation: "/임신중절수술병원-검사와-주수-확인",
+  hospitalAnesthesiaRecovery: "/임신중절수술병원-마취-회복-체계-확인",
+  hospitalAftercareCheck: "/임신중절수술병원-사후관리-확인사항",
   infoHub: "/의료정보",
 } as const;
 

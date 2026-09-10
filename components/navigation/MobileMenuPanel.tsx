@@ -5,10 +5,20 @@ import { contentUiConfig } from "@/config/content-ui";
 import { ROUTES } from "@/config/routes";
 import { topicConfig } from "@/config/topic";
 import { CONTENT_CARDS } from "@/lib/content-registry";
+import type { ClayAccent, ContentClusterId } from "@/types/content";
 
 type MobileMenuPanelProps = {
   onNavigate: () => void;
   activePath?: string;
+};
+
+type MobileMenuItem = {
+  id: string;
+  href: string;
+  title: string;
+  label: string;
+  iconKey: ContentClusterId;
+  accent: ClayAccent;
 };
 
 export function MobileMenuPanel({
@@ -16,6 +26,31 @@ export function MobileMenuPanel({
   activePath,
 }: MobileMenuPanelProps) {
   const showNumber = contentUiConfig.mobileShowMenuNumber;
+
+  const items: MobileMenuItem[] = [
+    {
+      id: "home",
+      href: ROUTES.home,
+      title: "임신중절수술",
+      label: "임신중절수술",
+      iconKey: "hospital",
+      accent: "neutral",
+    },
+    ...CONTENT_CARDS.map((card) => {
+      const menuItem = topicConfig.menuItems.find((m) => m.id === card.id);
+      const title = menuItem?.title ?? card.shortTitle;
+      return {
+        id: card.id,
+        href: card.href,
+        title,
+        label: showNumber
+          ? `${menuItem?.numberLabel ?? card.numberLabel} ${title}`
+          : title,
+        iconKey: card.iconKey,
+        accent: card.accent,
+      };
+    }),
+  ];
 
   return (
     <div
@@ -25,31 +60,29 @@ export function MobileMenuPanel({
     >
       <div className="cg-mobile-panel__inner">
         <div className="cg-mobile-panel__grid">
-          {CONTENT_CARDS.map((card) => {
-            const isActive = activePath === card.href;
-            const menuItem = topicConfig.menuItems.find((m) => m.id === card.id);
-            const title = menuItem?.title ?? card.shortTitle;
-            const label = showNumber
-              ? `${menuItem?.numberLabel ?? card.numberLabel} ${title}`
-              : title;
+          {items.map((item) => {
+            const isActive =
+              item.href === ROUTES.home
+                ? activePath === ROUTES.home || activePath === "/"
+                : activePath === item.href;
 
             return (
               <Link
-                key={card.id}
-                href={card.href}
+                key={item.id}
+                href={item.href}
                 scroll
                 className={`cg-mobile-panel__card${isActive ? " is-active" : ""}`}
                 onClick={onNavigate}
                 aria-current={isActive ? "page" : undefined}
-                aria-label={title}
+                aria-label={item.title}
               >
                 <span
-                  className={`cg-mobile-panel__label cg-mobile-panel__label--${card.accent}`}
+                  className={`cg-mobile-panel__label cg-mobile-panel__label--${item.accent}`}
                 >
                   <span className="cg-mobile-panel__icon" aria-hidden="true">
-                    <MenuIcon iconKey={card.iconKey} size={16} />
+                    <MenuIcon iconKey={item.iconKey} size={16} />
                   </span>
-                  <strong>{label}</strong>
+                  <strong>{item.label}</strong>
                 </span>
               </Link>
             );

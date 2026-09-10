@@ -30,6 +30,7 @@ export const AFTER_SYMPTOMS_PAGE: ContentPage = {
     before: "회복 전체 흐름과 일정은 ",
     anchor: "임신중절수술 회복기간 안내",
     after: "에서 함께 확인할 수 있습니다.",
+    href: ROUTES.recovery,
   },
   publishedAt: INFO_GUIDE_BATCH2_PUBLISHED_AT,
   updatedAt: INFO_GUIDE_BATCH2_PUBLISHED_AT,

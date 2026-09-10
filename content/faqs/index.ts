@@ -13,6 +13,10 @@ import { EMOTIONAL_CHANGE_FAQS } from "@/content/faqs/emotional-change";
 import { EXTRA_FAQS } from "@/content/faqs/extra";
 import { getHospitalLocationFaqs } from "@/content/faqs/hospital-location";
 import { HOSPITAL_FAQS } from "@/content/faqs/hospital";
+import { HOSPITAL_AFTERCARE_CHECK_FAQS } from "@/content/faqs/hospital-aftercare-check";
+import { HOSPITAL_ANESTHESIA_RECOVERY_FAQS } from "@/content/faqs/hospital-anesthesia-recovery";
+import { HOSPITAL_CONSULT_CHECK_FAQS } from "@/content/faqs/hospital-consult-check";
+import { HOSPITAL_EXAM_GESTATION_FAQS } from "@/content/faqs/hospital-exam-gestation";
 import { HUB_FAQS } from "@/content/faqs/hub";
 import { MEDICATION_DISCLOSURE_FAQS } from "@/content/faqs/medication-disclosure";
 import { MINOR_CONSULT_FAQS } from "@/content/faqs/minor-consult";
@@ -69,6 +73,10 @@ const ALL_FAQS: FaqItem[] = [
   ...MYTHS_FACTS_FAQS,
   ...DECISION_TAKE_TIME_FAQS,
   ...PARTNER_FAMILY_CONSULT_FAQS,
+  ...HOSPITAL_CONSULT_CHECK_FAQS,
+  ...HOSPITAL_EXAM_GESTATION_FAQS,
+  ...HOSPITAL_ANESTHESIA_RECOVERY_FAQS,
+  ...HOSPITAL_AFTERCARE_CHECK_FAQS,
 ];
 
 const FAQ_BY_ID = new Map(ALL_FAQS.map((item) => [item.id, item]));

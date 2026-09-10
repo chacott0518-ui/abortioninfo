@@ -20,8 +20,8 @@ export const COST_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "비용 구성뿐 아니라 가능 시기와 회복 과정까지 보려면 ",
-    anchor: "임신 중절수술 전체 정보",
-    after: "를 함께 확인하세요.",
+    anchor: "임신중절수술",
+    after: "을 함께 확인하세요.",
   },
   publishedAt: "2026-07-01",
   updatedAt: "2026-08-25",

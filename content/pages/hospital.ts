@@ -20,8 +20,8 @@ export const HOSPITAL_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "병원 선택 전 가능 시기와 비용, 회복 기준을 정리한 ",
-    anchor: "임신중절수술 종합 정보",
-    after: "를 먼저 확인하세요.",
+    anchor: "임신중절수술",
+    after: "을 먼저 확인하세요.",
   },
   publishedAt: "2026-07-01",
   updatedAt: "2026-07-27",
@@ -36,6 +36,12 @@ export const HOSPITAL_PAGE: ContentPage = {
   conclusion: [
     "임신중절수술 병원선택은 검사 항목과 결과 설명, 상담의 균형, 비용의 포함·추가 구분, 경과 확인과 연락 체계를 함께 비교하는 것이 도움이 됩니다.",
     "특정 병원을 최고라고 단정할 수 없으며, 최종 판단은 검사와 상담을 통해 이루어져야 합니다. 이 페이지는 비교 기준을 안내하는 일반 정보입니다.",
+  ],
+  clinicRelatedLinks: [
+    {
+      label: "연세365산부인과의원 공식 홈페이지",
+      href: "https://www.yeonsei365.com",
+    },
   ],
   thumbnail: TOPIC_MEDIA.hospital.thumbnail,
   topImages: [TOPIC_MEDIA.hospital.thumbnail],

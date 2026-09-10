@@ -4,13 +4,47 @@ import { MenuIcon } from "@/components/icons/MenuIcon";
 import { ROUTES } from "@/config/routes";
 import { topicConfig } from "@/config/topic";
 import { CONTENT_CARDS } from "@/lib/content-registry";
+import type { ClayAccent, ContentClusterId } from "@/types/content";
 
 type MegaMenuProps = {
   onNavigate: () => void;
   activePath?: string;
 };
 
+type MegaMenuItem = {
+  id: string;
+  href: string;
+  title: string;
+  description: string;
+  iconKey: ContentClusterId;
+  accent: ClayAccent;
+};
+
 export function MegaMenu({ onNavigate, activePath }: MegaMenuProps) {
+  const items: MegaMenuItem[] = [
+    {
+      id: "home",
+      href: ROUTES.home,
+      title: "임신중절수술",
+      description: "가능 시기·비용·회복·주의사항 전체 안내",
+      iconKey: "hospital",
+      accent: "neutral",
+    },
+    ...CONTENT_CARDS.map((card) => {
+      const menuItem = topicConfig.menuItems.find((m) => m.id === card.id);
+      return {
+        id: card.id,
+        href: card.href,
+        title: menuItem
+          ? `${menuItem.numberLabel} ${menuItem.title}`
+          : card.shortTitle,
+        description: menuItem?.description ?? card.description,
+        iconKey: card.iconKey,
+        accent: card.accent,
+      };
+    }),
+  ];
+
   return (
     <div
       className="cg-mega"
@@ -19,32 +53,30 @@ export function MegaMenu({ onNavigate, activePath }: MegaMenuProps) {
     >
       <div className="cg-mega__inner">
         <div className="cg-mega__grid">
-          {CONTENT_CARDS.map((card) => {
-            const isActive = activePath === card.href;
-            const menuItem = topicConfig.menuItems.find((m) => m.id === card.id);
-            const title = menuItem
-              ? `${menuItem.numberLabel} ${menuItem.title}`
-              : card.shortTitle;
-            const description = menuItem?.description ?? card.description;
+          {items.map((item) => {
+            const isActive =
+              item.href === ROUTES.home
+                ? activePath === ROUTES.home || activePath === "/"
+                : activePath === item.href;
 
             return (
               <Link
-                key={card.id}
-                href={card.href}
+                key={item.id}
+                href={item.href}
                 scroll
                 className={`cg-mega__card${isActive ? " is-active" : ""}`}
                 onClick={onNavigate}
                 aria-current={isActive ? "page" : undefined}
               >
                 <span
-                  className={`cg-mega__label cg-mega__label--${card.accent}`}
+                  className={`cg-mega__label cg-mega__label--${item.accent}`}
                 >
                   <span className="cg-mega__card-icon" aria-hidden="true">
-                    <MenuIcon iconKey={card.iconKey} size={18} />
+                    <MenuIcon iconKey={item.iconKey} size={18} />
                   </span>
-                  <strong>{title}</strong>
+                  <strong>{item.title}</strong>
                 </span>
-                <small>{description}</small>
+                <small>{item.description}</small>
               </Link>
             );
           })}

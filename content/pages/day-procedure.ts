@@ -28,7 +28,7 @@ export const DAY_PROCEDURE_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "비용·회복까지 포함한 전체 흐름은 ",
-    anchor: "임신중절수술 종합 안내",
+    anchor: "임신중절수술",
     after: "에서 확인할 수 있습니다.",
   },
   publishedAt: INFO_GUIDE_BATCH2_PUBLISHED_AT,

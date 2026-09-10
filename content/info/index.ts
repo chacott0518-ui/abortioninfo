@@ -7,6 +7,10 @@ import { DAY_PROCEDURE_PAGE } from "@/content/pages/day-procedure";
 import { DECISION_TAKE_TIME_PAGE } from "@/content/pages/decision-take-time";
 import { EARLY_GESTATION_PAGE } from "@/content/pages/early-gestation";
 import { EMOTIONAL_CHANGE_PAGE } from "@/content/pages/emotional-change";
+import { HOSPITAL_AFTERCARE_CHECK_PAGE } from "@/content/pages/hospital-aftercare-check";
+import { HOSPITAL_ANESTHESIA_RECOVERY_PAGE } from "@/content/pages/hospital-anesthesia-recovery";
+import { HOSPITAL_CONSULT_CHECK_PAGE } from "@/content/pages/hospital-consult-check";
+import { HOSPITAL_EXAM_GESTATION_PAGE } from "@/content/pages/hospital-exam-gestation";
 import { MEDICATION_DISCLOSURE_PAGE } from "@/content/pages/medication-disclosure";
 import { MINOR_CONSULT_PAGE } from "@/content/pages/minor-consult";
 import { MYTHS_FACTS_PAGE } from "@/content/pages/myths-facts";
@@ -50,6 +54,10 @@ export const INFO_GUIDE_PAGES: ContentPage[] = [
   MYTHS_FACTS_PAGE,
   DECISION_TAKE_TIME_PAGE,
   PARTNER_FAMILY_CONSULT_PAGE,
+  HOSPITAL_CONSULT_CHECK_PAGE,
+  HOSPITAL_EXAM_GESTATION_PAGE,
+  HOSPITAL_ANESTHESIA_RECOVERY_PAGE,
+  HOSPITAL_AFTERCARE_CHECK_PAGE,
 ];
 
 /** 홈에 노출할 대표 정보가이드 (전체는 정보허브 `/의료정보`에서 열람) */

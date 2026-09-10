@@ -20,7 +20,7 @@ export const CAUTION_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "가능 시기와 비용, 회복기간을 포함한 ",
-    anchor: "임신중절수술 핵심 정보",
+    anchor: "임신중절수술",
     after: "도 함께 확인하세요.",
   },
   publishedAt: "2026-07-01",

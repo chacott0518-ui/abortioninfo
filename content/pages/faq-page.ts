@@ -21,7 +21,7 @@ export const FAQ_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "질문별 답변과 함께 전체 내용을 정리한 ",
-    anchor: "임신중절수술 종합 안내",
+    anchor: "임신중절수술",
     after: "도 확인할 수 있습니다.",
   },
   publishedAt: "2026-07-01",

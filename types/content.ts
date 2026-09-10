@@ -40,7 +40,11 @@ export type InfoGuideId =
   | "recoveryJournal"
   | "mythsFacts"
   | "decisionTakeTime"
-  | "partnerFamilyConsult";
+  | "partnerFamilyConsult"
+  | "hospitalConsultCheck"
+  | "hospitalExamGestation"
+  | "hospitalAnesthesiaRecovery"
+  | "hospitalAftercareCheck";
 
 export type ContentPageId = ContentClusterId | InfoGuideId;
 
@@ -269,6 +273,8 @@ export type HubContextLink = {
   before: string;
   anchor: string;
   after: string;
+  /** 기본 `/`. recovery deep 등은 OWNER URL을 지정할 수 있음 */
+  href?: string;
 };
 
 /** 외부 관련 문서 링크 (연세365 등) */

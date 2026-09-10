@@ -6,12 +6,12 @@ type HubContextLinkProps = {
   link: HubContextLinkData;
 };
 
-/** 하위 페이지 → 메인(`/`) 본문 문맥링크 */
+/** 하위 페이지 → 허브/OWNER 문맥링크 (기본 목적지: `/`) */
 export function HubContextLink({ link }: HubContextLinkProps) {
   return (
     <p className="cg-hub-context-link">
       {link.before}
-      <Link href="/">{link.anchor}</Link>
+      <Link href={link.href ?? "/"}>{link.anchor}</Link>
       {link.after}
     </p>
   );

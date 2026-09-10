@@ -11,6 +11,10 @@ import { EARLY_GESTATION_PAGE } from "@/content/pages/early-gestation";
 import { EMOTIONAL_CHANGE_PAGE } from "@/content/pages/emotional-change";
 import { FAQ_PAGE } from "@/content/pages/faq-page";
 import { HOSPITAL_PAGE } from "@/content/pages/hospital";
+import { HOSPITAL_AFTERCARE_CHECK_PAGE } from "@/content/pages/hospital-aftercare-check";
+import { HOSPITAL_ANESTHESIA_RECOVERY_PAGE } from "@/content/pages/hospital-anesthesia-recovery";
+import { HOSPITAL_CONSULT_CHECK_PAGE } from "@/content/pages/hospital-consult-check";
+import { HOSPITAL_EXAM_GESTATION_PAGE } from "@/content/pages/hospital-exam-gestation";
 import { CONTENT_CARDS } from "@/content/pages/home";
 import { MEDICATION_DISCLOSURE_PAGE } from "@/content/pages/medication-disclosure";
 import { MINOR_CONSULT_PAGE } from "@/content/pages/minor-consult";
@@ -66,6 +70,10 @@ export const CONTENT_PAGES: ContentPage[] = [
   MYTHS_FACTS_PAGE,
   DECISION_TAKE_TIME_PAGE,
   PARTNER_FAMILY_CONSULT_PAGE,
+  HOSPITAL_CONSULT_CHECK_PAGE,
+  HOSPITAL_EXAM_GESTATION_PAGE,
+  HOSPITAL_ANESTHESIA_RECOVERY_PAGE,
+  HOSPITAL_AFTERCARE_CHECK_PAGE,
 ];
 
 export function getContentPageBySlug(slug: string): ContentPage | undefined {

@@ -28,7 +28,7 @@ export const EARLY_GESTATION_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "가능 시기와 검사·비용의 큰 흐름은 ",
-    anchor: "임신중절수술 안내",
+    anchor: "임신중절수술",
     after: "에서 함께 확인할 수 있습니다.",
   },
   publishedAt: INFO_GUIDE_PUBLISHED_AT,

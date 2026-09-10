@@ -28,7 +28,7 @@ export const PRE_EXAM_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "가능 시기와 비용·회복까지 함께 보려면 ",
-    anchor: "임신중절수술 종합 안내",
+    anchor: "임신중절수술",
     after: "에서 전체 흐름을 확인할 수 있습니다.",
   },
   publishedAt: INFO_GUIDE_PUBLISHED_AT,

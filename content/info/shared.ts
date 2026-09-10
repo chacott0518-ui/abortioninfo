@@ -39,3 +39,6 @@ export const INFO_CATEGORIES = {
 
 /** 3차 배치 발행일 (이해·정보/회복 확장 신규 16편) */
 export const INFO_GUIDE_BATCH3_PUBLISHED_AT = "2026-08-12";
+
+/** 4차 배치 발행일 (병원·정보 SUPPORT 4편) */
+export const INFO_GUIDE_BATCH4_PUBLISHED_AT = "2026-09-10";

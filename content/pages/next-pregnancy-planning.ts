@@ -30,6 +30,7 @@ export const NEXT_PREGNANCY_PLANNING_PAGE: ContentPage = {
     before: "회복 전반에 대한 안내는 ",
     anchor: "임신중절수술 회복기간 안내",
     after: "에서 확인할 수 있습니다.",
+    href: ROUTES.recovery,
   },
   publishedAt: INFO_GUIDE_BATCH3_PUBLISHED_AT,
   updatedAt: INFO_GUIDE_BATCH3_PUBLISHED_AT,

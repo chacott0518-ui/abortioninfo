@@ -20,7 +20,7 @@ export const RECOVERY_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "수술 전 확인사항과 비용, 주수별 기준은 ",
-    anchor: "임신중절수술 전체 안내",
+    anchor: "임신중절수술",
     after: "에서 함께 확인할 수 있습니다.",
   },
   publishedAt: "2026-07-01",
