@@ -36,6 +36,7 @@ import { RELIABLE_INFO_SOURCES_FAQS } from "@/content/faqs/reliable-info-sources
 import { REVIEW_FAQS } from "@/content/faqs/review";
 import { SLEEP_ANESTHESIA_FAQS } from "@/content/faqs/sleep-anesthesia";
 import { TERMS_GLOSSARY_FAQS } from "@/content/faqs/terms-glossary";
+import { PHASE1_GUIDE_FAQS } from "@/content/pages/phase1-guides";
 import type { FaqItem } from "@/types/faq";
 
 const ALL_FAQS: FaqItem[] = [
@@ -77,6 +78,7 @@ const ALL_FAQS: FaqItem[] = [
   ...HOSPITAL_EXAM_GESTATION_FAQS,
   ...HOSPITAL_ANESTHESIA_RECOVERY_FAQS,
   ...HOSPITAL_AFTERCARE_CHECK_FAQS,
+  ...PHASE1_GUIDE_FAQS,
 ];
 
 const FAQ_BY_ID = new Map(ALL_FAQS.map((item) => [item.id, item]));

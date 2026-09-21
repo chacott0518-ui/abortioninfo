@@ -83,8 +83,11 @@ export function ArticleSectionBlock({
     section.faqIds && section.faqIds.length > 0
       ? getFaqsByIds(section.faqIds)
       : [];
-  const icon =
-    section.decorativeIcon || getLayoutDecorativeIcon(section.layout);
+  const rawIcon =
+    section.decorativeIcon !== undefined
+      ? section.decorativeIcon
+      : getLayoutDecorativeIcon(section.layout);
+  const icon = rawIcon.trim();
 
   return (
     <section
@@ -93,9 +96,11 @@ export function ArticleSectionBlock({
       aria-labelledby={`${section.id}-heading`}
     >
       <HeadingTag id={`${section.id}-heading`}>
-        <span className="cg-article-section__icon" aria-hidden="true">
-          {icon}
-        </span>
+        {icon ? (
+          <span className="cg-article-section__icon" aria-hidden="true">
+            {icon}
+          </span>
+        ) : null}
         {showNumbers && section.numberLabel ? (
           <span className="cg-article-section__num" aria-hidden="true">
             {section.numberLabel}

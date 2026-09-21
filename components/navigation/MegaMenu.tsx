@@ -89,7 +89,7 @@ export function MegaMenu({ onNavigate, activePath }: MegaMenuProps) {
           onClick={onNavigate}
           aria-current={activePath === ROUTES.infoHub ? "page" : undefined}
         >
-          📖 의료정보 전체보기
+          의료정보 전체보기
           <span aria-hidden="true"> →</span>
         </Link>
       </div>

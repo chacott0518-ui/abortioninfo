@@ -40,54 +40,50 @@ export default function HomePage() {
     <>
       <div className="cg-home cg-page--enter">
         <div className="cg-container">
-          {/* 1. 상단 목차 이미지 카드 6개 */}
+          {/* 1. 상단 검색의도 카드 6개 */}
           <HomeContentCards />
 
-          {/* 1-b. 핵심 카드 밖의 의료정보 가이드 레이어 (대표 4개 + 전체보기) */}
-          <InfoGuideCards
-            cards={HOME_INFO_GUIDE_CARDS}
-            moreHref={ROUTES.infoHub}
-          />
-
-          {/* 2. 메인 세로 이미지 */}
-          {featureImage?.src ? (
-            <LongGuideImage image={featureImage} priority />
-          ) : null}
-
-          {/* 3. 지도 */}
-          <ClinicMap />
-
-          {/* 4. H1 + 소제목 */}
+          {/* 2. H1 + subtitle + 리드 (지도/병원정보보다 먼저) */}
           <header className="cg-page__header cg-home__header">
             <h1 className="cg-home__title">{HOME_INTRO.h1}</h1>
             <p className="cg-home__subtitle">{HOME_INTRO.subtitle}</p>
           </header>
 
-          {/* 5. 직접답변형 도입 */}
           <section className="cg-home-lead">
             {HOME_INTRO.paragraphs.map((p) => (
               <p key={p.slice(0, 48)}>{p}</p>
             ))}
           </section>
 
-          {/* 6. 핵심요약 */}
+          {/* 3. 의료정보 가이드 레이어 */}
+          <InfoGuideCards
+            cards={HOME_INFO_GUIDE_CARDS}
+            moreHref={ROUTES.infoHub}
+          />
+
+          {/* 4. 메인 세로 이미지 */}
+          {featureImage?.src ? (
+            <LongGuideImage image={featureImage} priority />
+          ) : null}
+
+          {/* 5. 핵심요약 */}
           {HOME_INTRO.keySummary ? (
             <KeySummaryCards items={HOME_INTRO.keySummary} />
           ) : null}
 
-          {/* 7. 번호형 목차 */}
+          {/* 6. 번호형 목차 */}
           <PageTocCards items={HOME_TOC} />
 
-          {/* 8. 본문 섹션 */}
+          {/* 7. 본문 섹션 */}
           <ArticleBody sections={HOME_SECTIONS} />
 
-          {/* 9. 결론 */}
+          {/* 8. 결론 */}
           <ArticleConclusion
             heading="임신중절수술 상담 전 마지막으로 확인할 점"
             body={HOME_CONCLUSION}
           />
 
-          {/* 10. FAQ */}
+          {/* 9. FAQ */}
           <FaqAccordion
             items={faqs}
             title="임신중절수술 자주 묻는 질문"
@@ -95,8 +91,11 @@ export default function HomePage() {
             className="cg-main-faq"
           />
 
-          {/* 11. 관련 콘텐츠 */}
+          {/* 10. 관련 콘텐츠 */}
           <RelatedPages showAll />
+
+          {/* 11. 지도·위치 (H1 이후 보조 정보) */}
+          <ClinicMap />
 
           {/* 12. 상담 CTA */}
           <PartnershipCTA variant="bottom" />
@@ -117,7 +116,7 @@ export default function HomePage() {
             image: featureImage?.src,
             type: "WebPage",
             datePublished: CARD_PUBLISHED_AT,
-            dateModified: "2026-08-25",
+            dateModified: "2026-09-21",
           }),
           itemListJsonLd(),
           faqPageJsonLd(faqs, "/"),

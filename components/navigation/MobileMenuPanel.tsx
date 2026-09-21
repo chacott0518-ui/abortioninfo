@@ -3,7 +3,6 @@ import Link from "next/link";
 import { MenuIcon } from "@/components/icons/MenuIcon";
 import { contentUiConfig } from "@/config/content-ui";
 import { ROUTES } from "@/config/routes";
-import { topicConfig } from "@/config/topic";
 import { CONTENT_CARDS } from "@/lib/content-registry";
 import type { ClayAccent, ContentClusterId } from "@/types/content";
 
@@ -21,6 +20,15 @@ type MobileMenuItem = {
   accent: ClayAccent;
 };
 
+const CORE_SHORT_LABEL: Record<string, string> = {
+  cost: "수술비용",
+  recovery: "회복기간",
+  precautions: "주의사항",
+  hospital: "병원선택",
+  reviews: "후기",
+  faq: "FAQ",
+};
+
 export function MobileMenuPanel({
   onNavigate,
   activePath,
@@ -36,16 +44,21 @@ export function MobileMenuPanel({
       iconKey: "hospital",
       accent: "neutral",
     },
+    {
+      id: "infoHub",
+      href: ROUTES.infoHub,
+      title: "임신중절수술 정보",
+      label: "임신중절수술 정보",
+      iconKey: "faq",
+      accent: "cyan",
+    },
     ...CONTENT_CARDS.map((card) => {
-      const menuItem = topicConfig.menuItems.find((m) => m.id === card.id);
-      const title = menuItem?.title ?? card.shortTitle;
+      const short = CORE_SHORT_LABEL[card.id] ?? card.cardMetaLabel;
       return {
         id: card.id,
         href: card.href,
-        title,
-        label: showNumber
-          ? `${menuItem?.numberLabel ?? card.numberLabel} ${title}`
-          : title,
+        title: short,
+        label: showNumber ? `${card.numberLabel} ${short}` : short,
         iconKey: card.iconKey,
         accent: card.accent,
       };
@@ -96,7 +109,7 @@ export function MobileMenuPanel({
           onClick={onNavigate}
           aria-current={activePath === ROUTES.infoHub ? "page" : undefined}
         >
-          📖 의료정보 전체보기
+          의료정보 전체보기
           <span aria-hidden="true"> →</span>
         </Link>
       </div>

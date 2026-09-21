@@ -33,6 +33,9 @@ export const INFO_CATEGORIES = {
   consult: { label: "상담·준비", icon: "📋" },
   surgery: { label: "수술·마취", icon: "🩺" },
   recovery: { label: "회복·관리", icon: "🌿" },
+  payment: { label: "비용·결제", icon: "💳" },
+  legal: { label: "법·제도", icon: "⚖️" },
+  privacy: { label: "개인정보·진료기록", icon: "🔒" },
   hospital: { label: "병원·정보", icon: "📖" },
   understand: { label: "이해·정보", icon: "💡" },
 } as const;
@@ -42,3 +45,6 @@ export const INFO_GUIDE_BATCH3_PUBLISHED_AT = "2026-08-12";
 
 /** 4차 배치 발행일 (병원·정보 SUPPORT 4편) */
 export const INFO_GUIDE_BATCH4_PUBLISHED_AT = "2026-09-10";
+
+/** 5차 배치 발행일 (비용·결제/법·제도/개인정보·상담 long-tail 1차) */
+export const INFO_GUIDE_BATCH5_PUBLISHED_AT = "2026-09-21";

@@ -44,7 +44,21 @@ export type InfoGuideId =
   | "hospitalConsultCheck"
   | "hospitalExamGestation"
   | "hospitalAnesthesiaRecovery"
-  | "hospitalAftercareCheck";
+  | "hospitalAftercareCheck"
+  | "cardPaymentHistory"
+  | "cardPaymentCheck"
+  | "costIncludedItems"
+  | "receiptPaymentRecord"
+  | "legalStatusCheck"
+  | "medicalRecordContents"
+  | "thirdPartyRecordAccess"
+  | "fastingBefore"
+  | "visitAlone"
+  | "consultOnlyFirst"
+  | "stayTimeVsSurgery"
+  | "pregnancyTestAfter"
+  | "reUltrasoundAfter"
+  | "medicationVsSurgical";
 
 export type ContentPageId = ContentClusterId | InfoGuideId;
 
@@ -55,7 +69,10 @@ export type InfoCategory =
   | "surgery"
   | "recovery"
   | "hospital"
-  | "understand";
+  | "understand"
+  | "payment"
+  | "legal"
+  | "privacy";
 
 export type ContentImage = {
   src: string;

@@ -7,6 +7,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { MegaMenu } from "@/components/navigation/MegaMenu";
 import { MobileMenuPanel } from "@/components/navigation/MobileMenuPanel";
 import { CONTACT } from "@/config/contact";
+import { ROUTES } from "@/config/routes";
 import { topicConfig } from "@/config/topic";
 
 export function Header() {
@@ -35,7 +36,9 @@ export function Header() {
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeMenu();
+      if (event.key === "Escape") {
+        closeMenu();
+      }
     };
 
     document.addEventListener("mousedown", handlePointerDown);
@@ -46,6 +49,9 @@ export function Header() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [menuOpen]);
+
+  const isHome = pathname === "/" || pathname === ROUTES.home;
+  const isInfoHub = pathname === ROUTES.infoHub;
 
   return (
     <>
@@ -71,6 +77,23 @@ export function Header() {
             >
               <span className="cg-header-logo__text">{topicConfig.logoText}</span>
             </Link>
+
+            <nav className="cg-header-primary" aria-label="주요 메뉴">
+              <Link
+                href={ROUTES.home}
+                className={`cg-header-primary__link${isHome ? " is-active" : ""}`}
+                aria-current={isHome ? "page" : undefined}
+              >
+                임신중절수술
+              </Link>
+              <Link
+                href={ROUTES.infoHub}
+                className={`cg-header-primary__link${isInfoHub ? " is-active" : ""}`}
+                aria-current={isInfoHub ? "page" : undefined}
+              >
+                임신중절수술 정보
+              </Link>
+            </nav>
 
             <div className="cg-header-actions">
               {CONTACT.kakaoEnabled ? (

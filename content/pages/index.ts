@@ -24,6 +24,7 @@ import { OVULATION_RETURN_PAGE } from "@/content/pages/ovulation-return";
 import { PAIN_CHANGE_PAGE } from "@/content/pages/pain-change";
 import { PARTNER_FAMILY_CONSULT_PAGE } from "@/content/pages/partner-family-consult";
 import { PERIOD_RETURN_PAGE } from "@/content/pages/period-return";
+import { PHASE1_GUIDE_PAGES } from "@/content/pages/phase1-guides";
 import { PRE_EXAM_PAGE } from "@/content/pages/pre-exam";
 import { PRE_PROCEDURE_ANXIETY_PAGE } from "@/content/pages/pre-procedure-anxiety";
 import { PROCEDURE_METHODS_PAGE } from "@/content/pages/procedure-methods";
@@ -74,6 +75,7 @@ export const CONTENT_PAGES: ContentPage[] = [
   HOSPITAL_EXAM_GESTATION_PAGE,
   HOSPITAL_ANESTHESIA_RECOVERY_PAGE,
   HOSPITAL_AFTERCARE_CHECK_PAGE,
+  ...PHASE1_GUIDE_PAGES,
 ];
 
 export function getContentPageBySlug(slug: string): ContentPage | undefined {

@@ -16,7 +16,7 @@ export const INFO_HUB_PUBLISHED_AT = "2026-08-12";
 export const INFO_HUB_SEO = {
   title: "임신중절수술 의료정보 전체보기",
   description:
-    "임신중절수술과 관련해 검사·진단, 상담·준비, 수술·마취, 회복·관리 주제로 정리한 의료정보 가이드를 한눈에 확인할 수 있습니다.",
+    "임신중절수술 관련 최신 가이드와 검사·상담·수술·회복·비용·결제·법·제도·개인정보·진료기록 주제를 카테고리별로 확인할 수 있습니다.",
   keywords: [
     "임신중절수술 의료정보",
     "임신중절수술 가이드",
@@ -32,12 +32,26 @@ const CATEGORY_ORDER: InfoCategory[] = [
   "consult",
   "surgery",
   "recovery",
+  "payment",
+  "legal",
+  "privacy",
   "understand",
   "hospital",
 ];
 
+function getLatestCards(limit = 6) {
+  return [...INFO_GUIDE_CARDS]
+    .sort((a, b) => {
+      const byDate = (b.publishedAt || "").localeCompare(a.publishedAt || "");
+      if (byDate !== 0) return byDate;
+      return a.title.localeCompare(b.title, "ko");
+    })
+    .slice(0, limit);
+}
+
 /** 정보허브 `/의료정보` — Korean 리터럴 폴더 대신 `[slug]` 동적 라우트에서 렌더 (한글 경로 인코딩 이슈 회피) */
 export function InfoHubView() {
+  const latestCards = getLatestCards(6);
   const groups = CATEGORY_ORDER.map((key) => ({
     key,
     ...INFO_CATEGORIES[key],
@@ -52,7 +66,7 @@ export function InfoHubView() {
       keywords: INFO_HUB_SEO.keywords,
       type: "WebPage",
       datePublished: INFO_HUB_PUBLISHED_AT,
-      dateModified: INFO_HUB_PUBLISHED_AT,
+      dateModified: "2026-09-21",
     }),
     breadcrumbJsonLd([
       { name: SITE.shortName, path: "/" },
@@ -88,12 +102,20 @@ export function InfoHubView() {
 
           <section className="cg-home-lead">
             <p>
-              임신중절수술을 준비하며 확인하면 도움이 되는 정보를 검사·진단,
-              상담·준비, 수술·마취, 회복·관리 주제로 정리했습니다. 개인의
-              진단이나 진료를 대신하지 않으며, 정확한 판단은 의료진 상담을
-              통해 확인해야 합니다.
+              임신중절수술을 준비하며 확인하면 도움이 되는 정보를 최신순·카테고리별로
+              모았습니다. 검사·상담·수술·회복뿐 아니라 비용·결제, 법·제도,
+              개인정보·진료기록까지 주제 허브로 나눴습니다. 개인의 진단이나 진료를
+              대신하지 않으며, 정확한 판단은 의료진 상담을 통해 확인해야 합니다.
             </p>
           </section>
+
+          <InfoGuideCards
+            cards={latestCards}
+            headingLevel="h2"
+            headingId="info-hub-latest"
+            title="최신 의료정보"
+            subtitle="최근에 정리한 가이드 6개를 먼저 확인하세요."
+          />
 
           <div className="cg-info-hub__catnav-wrap">
             <nav className="cg-info-hub__catnav" aria-label="카테고리 바로가기">
