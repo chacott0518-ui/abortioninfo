@@ -1,20 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback } from "react";
+import { useCallback, type MouseEvent } from "react";
 
 import { CONTACT } from "@/config/contact";
 import { ROUTES } from "@/config/routes";
-import { YEONSEI365_LINKS } from "@/content/info/shared";
 
 import styles from "./PcFloatingRail.module.css";
+
+const YEONSEI365_CONSULT_URL =
+  "https://www.yeonsei365.com/abortion?consult=1";
 
 /**
  * PC 전용 우측 Floating Rail (1280px+ CSS 노출).
  * render 단계에서 window/matchMedia 미사용. HEAD exact는 `/`만.
  */
 export function PcFloatingRail() {
-  const scrollTop = useCallback(() => {
+  const scrollTop = useCallback((event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
@@ -27,13 +30,13 @@ export function PcFloatingRail() {
         의료정보
       </Link>
       <a
-        href={YEONSEI365_LINKS.clinic}
+        href={YEONSEI365_CONSULT_URL}
         className={`${styles.item} ${styles.clinic}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="연세365 공식상담"
+        aria-label="간편예약"
       >
-        연세365 공식상담
+        간편예약
       </a>
       {CONTACT.kakaoEnabled ? (
         <a

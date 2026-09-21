@@ -6,7 +6,8 @@
   .rail {
     position: fixed;
     top: 50%;
-    left: calc(50% + (var(--site-max-width, 1180px) / 2) + 12px);
+    /* 본문(max 1180) 바깥 오른쪽으로 더 이동 */
+    left: calc(50% + (var(--site-max-width, 1180px) / 2) + 28px);
     right: auto;
     z-index: 70;
     display: flex;
@@ -15,13 +16,6 @@
     width: 112px;
     transform: translateY(-50%);
     pointer-events: auto;
-  }
-
-  @media (max-width: 1439px) {
-    .rail {
-      left: auto;
-      right: 10px;
-    }
   }
 
   .item {
@@ -44,42 +38,73 @@
     box-shadow: 0 4px 12px rgba(16, 47, 61, 0.08);
     cursor: pointer;
     font-family: inherit;
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      background-color 160ms ease,
+      border-color 160ms ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .item:hover,
+  /* 마우스 클릭 시 파란 기본 outline 제거 */
+  .item:focus {
+    outline: none;
+  }
+
+  /* 키보드 Tab용 focus-visible만 브랜드 ring */
   .item:focus-visible {
-    outline: 2px solid var(--cg-link, #0b63ce);
-    outline-offset: 1px;
+    outline: none;
+    box-shadow:
+      0 0 0 2px #fff,
+      0 0 0 4px #8f274e;
   }
 
-  /* 내부링크: white / navy */
+  .item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(16, 47, 61, 0.16);
+  }
+
+  .item:focus-visible:hover {
+    box-shadow:
+      0 0 0 2px #fff,
+      0 0 0 4px #8f274e,
+      0 8px 18px rgba(16, 47, 61, 0.16);
+  }
+
+  .item:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(16, 47, 61, 0.12);
+  }
+
+  /* 임신중절수술 / 의료정보: white + navy */
   .internal {
     background: #fff;
     color: #17364a;
   }
 
-  /* 연세365: soft accent */
+  /* 간편예약: soft pink */
   .clinic {
-    background: #f6eef2;
+    background: #f8e9ef;
     color: #8f274e;
-    border-color: rgba(143, 39, 78, 0.16);
+    border-color: rgba(143, 39, 78, 0.18);
   }
 
-  /* 카톡: yellow */
+  /* 카톡상담: kakao yellow */
   .kakao {
     background: #fee500;
     color: #3b1b1b;
     border-color: transparent;
   }
 
-  /* 전화: navy */
+  /* 전화상담: navy */
   .phone {
     background: #17364a;
     color: #fff;
     border-color: transparent;
   }
 
-  /* TOP: dark */
+  /* TOP: dark navy */
   .top {
     background: #102f3d;
     color: #fff;
@@ -90,5 +115,10 @@
 @media (prefers-reduced-motion: reduce) {
   .item {
     transition: none;
+  }
+
+  .item:hover,
+  .item:active {
+    transform: none;
   }
 }
