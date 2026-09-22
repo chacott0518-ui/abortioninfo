@@ -58,7 +58,31 @@ export type InfoGuideId =
   | "stayTimeVsSurgery"
   | "pregnancyTestAfter"
   | "reUltrasoundAfter"
-  | "medicationVsSurgical";
+  | "medicationVsSurgical"
+  | "cashPaymentCheck"
+  | "examFeeSeparate"
+  | "aftercareFeeIncluded"
+  | "receiptReissue"
+  | "costConsultQuestions"
+  | "costGuideChecklist"
+  | "legalSourceWhere"
+  | "legalizationWording"
+  | "illegalAdCheck"
+  | "identityVerifyWhy"
+  | "allergyConditionDisclose"
+  | "consultPrepItems"
+  | "counselingRecordManage"
+  | "guardianRecordAccess"
+  | "recordCopyIssue"
+  | "emrRecordWhat"
+  | "insuranceVsHospitalRecord"
+  | "sameDayPossible"
+  | "cycleMemoNeed"
+  | "companionRole"
+  | "showerAfterWhen"
+  | "exerciseAfterWhen"
+  | "sexAfterWhen"
+  | "bleedingAmountJudge";
 
 export type ContentPageId = ContentClusterId | InfoGuideId;
 
