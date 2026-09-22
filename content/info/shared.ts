@@ -48,3 +48,6 @@ export const INFO_GUIDE_BATCH4_PUBLISHED_AT = "2026-09-10";
 
 /** 5차 배치 발행일 (비용·결제/법·제도/개인정보·상담 long-tail 1차) */
 export const INFO_GUIDE_BATCH5_PUBLISHED_AT = "2026-09-21";
+
+/** 6차 배치 발행일 (long-tail 2차 24편) */
+export const INFO_GUIDE_BATCH6_PUBLISHED_AT = "2026-09-22";
