@@ -1,0 +1,289 @@
+{
+  "generatedAt": "2026-09-22",
+  "updatedAt": "2026-09-22",
+  "note": "Localized neutral Unsplash images for KR clinic context. No surgery/blood/ultrasound closeups. Unsplash License.",
+  "replaceCandidates": [
+    {
+      "slug": "임신중절수술-현금결제-확인사항",
+      "reason": "기존 미국 IRS/세금서류 → 원화·현금 맥락으로 교체"
+    },
+    {
+      "slug": "임신중절수술-비용-안내-확인사항",
+      "reason": "해외 대시보드/분석 화면 느낌 → 비용 체크리스트 데스크로 교체"
+    },
+    {
+      "slug": "임신중절수술-영수증-재발급",
+      "reason": "일반 현금다발 약함 → 영수증·계산 데스크로 교체"
+    },
+    {
+      "slug": "임신중절수술-본인확인-절차",
+      "reason": "결제 단말 느낌 → 병원 접수·상담 데스크로 교체"
+    },
+    {
+      "slug": "임신중절수술-EMR-기록",
+      "reason": "검사비와 동일 사진 중복 → EMR/모니터 상담 장면으로 교체"
+    },
+    {
+      "slug": "임신중절수술-건강보험-병원기록-차이",
+      "reason": "비용상담과 동일 사진 중복 → 문서 비교·기록 데스크로 교체"
+    },
+    {
+      "slug": "임신중절수술-당일-진행-가능-여부",
+      "reason": "사후진료비와 동일 달력 중복 → 스마트폰 예약 일정으로 교체"
+    },
+    {
+      "slug": "임신중절수술-후-샤워",
+      "reason": "준비물 체크리스트와 동일 → 회복 일정 메모로 교체"
+    },
+    {
+      "slug": "임신중절수술-보호자-기록-열람",
+      "reason": "합법화 표현과 동일 문서샷 중복 → 개인정보·폴더 문서로 교체"
+    },
+    {
+      "slug": "임신중절수술-후-출혈량-판단",
+      "reason": "의도 약한 스케치 → 증상 체크 메모 이미지로 교체"
+    }
+  ],
+  "items": [
+    {
+      "slug": "임신중절수술-현금결제-확인사항",
+      "imageTopic": "payment-checklist-clipboard",
+      "sourceUrl": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-현금결제-확인사항.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 현금결제 확인사항을 상담에서 정리하는 병원 상담 이미지"
+    },
+    {
+      "slug": "임신중절수술-검사비-별도-여부",
+      "imageTopic": "clinic-exam-desk",
+      "sourceUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-검사비-별도-여부.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 검사비 별도 여부를 확인하는 병원 상담 데스크 이미지"
+    },
+    {
+      "slug": "임신중절수술-사후진료비-포함-여부",
+      "imageTopic": "followup-calendar",
+      "sourceUrl": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-사후진료비-포함-여부.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 사후진료비 포함 여부를 확인하는 달력 일정 이미지"
+    },
+    {
+      "slug": "임신중절수술-영수증-재발급",
+      "imageTopic": "receipt-calc-desk",
+      "sourceUrl": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-영수증-재발급.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 영수증 재발급을 안내하는 계산기와 수납 서류 이미지"
+    },
+    {
+      "slug": "임신중절수술-비용-상담-전-질문",
+      "imageTopic": "consult-notes-laptop",
+      "sourceUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-비용-상담-전-질문.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 비용 상담 전 질문을 메모하는 노트북 상담 이미지"
+    },
+    {
+      "slug": "임신중절수술-비용-안내-확인사항",
+      "imageTopic": "cost-checklist-notes",
+      "sourceUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-비용-안내-확인사항.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 비용 안내 확인사항을 적어 두는 체크리스트 이미지"
+    },
+    {
+      "slug": "임신중절수술-법적-기준-확인처",
+      "imageTopic": "legal-books-desk",
+      "sourceUrl": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-법적-기준-확인처.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 법적 기준 확인처를 안내하는 법률 문서 데스크 이미지"
+    },
+    {
+      "slug": "낙태-합법화-표현-이해",
+      "imageTopic": "terminology-writing",
+      "sourceUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/낙태-합법화-표현-이해.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "낙태 합법화 표현 이해를 돕는 메모와 문서 정리 이미지"
+    },
+    {
+      "slug": "임신중절수술-위법-광고-구분",
+      "imageTopic": "phone-info-check",
+      "sourceUrl": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-위법-광고-구분.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 위법 광고를 구분하는 스마트폰 정보 확인 이미지"
+    },
+    {
+      "slug": "임신중절수술-본인확인-절차",
+      "imageTopic": "hospital-reception-desk",
+      "sourceUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-본인확인-절차.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 본인확인 절차를 안내하는 병원 접수 데스크 이미지"
+    },
+    {
+      "slug": "임신중절수술-알레르기-기저질환-알리기",
+      "imageTopic": "medical-history-form",
+      "sourceUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-알레르기-기저질환-알리기.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 전 알레르기와 기저질환을 알리는 문진 상담 이미지"
+    },
+    {
+      "slug": "임신중절수술-상담-전-준비물",
+      "imageTopic": "prep-checklist-board",
+      "sourceUrl": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-상담-전-준비물.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 상담 전 준비물을 확인하는 체크리스트 메모 이미지"
+    },
+    {
+      "slug": "임신중절수술-상담기록-관리",
+      "imageTopic": "privacy-records-folder",
+      "sourceUrl": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-상담기록-관리.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 상담기록 관리를 설명하는 개인정보 문서 이미지"
+    },
+    {
+      "slug": "임신중절수술-보호자-기록-열람",
+      "imageTopic": "guardian-privacy-folder",
+      "sourceUrl": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-보호자-기록-열람.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 보호자 기록 열람 기준을 설명하는 문서 폴더 이미지"
+    },
+    {
+      "slug": "임신중절수술-진료기록-사본-발급",
+      "imageTopic": "record-copy-request",
+      "sourceUrl": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-진료기록-사본-발급.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 진료기록 사본 발급을 안내하는 서류 작성 이미지"
+    },
+    {
+      "slug": "임신중절수술-EMR-기록",
+      "imageTopic": "emr-monitor-consult",
+      "sourceUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-EMR-기록.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 EMR 기록을 설명하는 병원 모니터 상담 이미지"
+    },
+    {
+      "slug": "임신중절수술-건강보험-병원기록-차이",
+      "imageTopic": "insurance-vs-hospital-docs",
+      "sourceUrl": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-건강보험-병원기록-차이.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 건강보험 기록과 병원 기록 차이를 비교하는 문서 이미지"
+    },
+    {
+      "slug": "임신중절수술-당일-진행-가능-여부",
+      "imageTopic": "same-day-phone-schedule",
+      "sourceUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-당일-진행-가능-여부.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 당일 진행 가능 여부를 확인하는 스마트폰 예약 이미지"
+    },
+    {
+      "slug": "임신중절수술-생리주기-메모",
+      "imageTopic": "cycle-calendar-memo",
+      "sourceUrl": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-생리주기-메모.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 상담을 위한 생리주기 메모 달력 이미지"
+    },
+    {
+      "slug": "임신중절수술-동행자-역할",
+      "imageTopic": "companion-support",
+      "sourceUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-동행자-역할.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 동행자 역할을 설명하는 상담 동행 이미지"
+    },
+    {
+      "slug": "임신중절수술-후-샤워",
+      "imageTopic": "recovery-schedule-notes",
+      "sourceUrl": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&h=801&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-후-샤워.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 후 샤워 시점을 확인하는 회복 일정 메모 이미지"
+    },
+    {
+      "slug": "임신중절수술-후-운동",
+      "imageTopic": "recovery-exercise-timing",
+      "sourceUrl": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-후-운동.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 후 운동 시작 시점을 확인하는 회복 일정 이미지"
+    },
+    {
+      "slug": "임신중절수술-후-성관계",
+      "imageTopic": "recovery-privacy-consult",
+      "sourceUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-후-성관계.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 후 성관계 시점을 확인하는 상담 안내 이미지"
+    },
+    {
+      "slug": "임신중절수술-후-출혈량-판단",
+      "imageTopic": "recovery-symptom-checklist",
+      "sourceUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
+      "licenseMemo": "Unsplash License",
+      "localPath": "public/images/info/임신중절수술-후-출혈량-판단.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "임신중절수술 후 출혈량 판단 기준을 적는 증상 체크리스트 이미지"
+    }
+  ]
+}

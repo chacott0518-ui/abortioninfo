@@ -4487,3 +4487,108 @@ img {
   line-height: 1.55;
   word-break: keep-all;
 }
+
+/* =============================================
+   정보허브·본문이미지 가이드 spacing QA (2026-09-22)
+   범위: /의료정보(.cg-info-hub) + LongGuideImage 있는 상세
+   기존 허브 6카드·홈 레이아웃 규칙 비침범
+   ============================================= */
+.cg-info-hub .cg-info-guides {
+  margin: 12px 0 24px;
+}
+
+.cg-info-hub .cg-info-guides + .cg-info-guides {
+  margin-top: 4px;
+}
+
+.cg-info-hub .cg-info-guides__header {
+  margin: 0 0 12px;
+}
+
+.cg-info-hub .cg-info-guides__subtitle {
+  margin-top: 6px;
+}
+
+.cg-info-hub__catnav-wrap {
+  margin: 4px 0 18px;
+}
+
+.cg-info-hub__catnav {
+  gap: 8px;
+  padding-bottom: 4px;
+}
+
+.cg-info-hub .cg-page-faq .cg-faq-item__body p,
+.cg-article-page .cg-page-faq .cg-faq-item__body p {
+  margin: 0 0 10px;
+}
+
+.cg-info-hub .cg-page-faq .cg-faq-item__body p:last-child,
+.cg-article-page .cg-page-faq .cg-faq-item__body p:last-child {
+  margin-bottom: 0;
+}
+
+.cg-article-page .cg-long-guide {
+  margin: 18px auto 26px;
+}
+
+@media (max-width: 767px) {
+  .cg-info-hub .cg-info-guides {
+    margin: 10px 0 20px;
+  }
+
+  .cg-info-hub .cg-info-guides__list {
+    gap: 10px;
+  }
+
+  .cg-info-hub .cg-info-guides__card {
+    gap: 6px;
+    min-height: 0;
+    padding: 12px;
+  }
+
+  .cg-info-hub .cg-info-guides__desc {
+    -webkit-line-clamp: 2;
+    line-height: 1.55;
+  }
+
+  .cg-info-hub .cg-info-guides__more {
+    margin-top: 4px;
+  }
+
+  .cg-info-hub__catnav-pill {
+    padding: 7px 12px;
+  }
+
+  .cg-article-page .cg-long-guide {
+    margin: 14px 0 20px;
+  }
+
+  .cg-article-page .cg-article-section {
+    margin-bottom: 18px;
+  }
+
+  .cg-article-page .cg-page-faq {
+    margin-top: 8px;
+  }
+
+  .cg-article-page .cg-faq-item {
+    margin-bottom: 8px;
+  }
+
+  .cg-article-page .cg-faq-item__body {
+    padding-top: 4px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 430px) {
+  .cg-info-hub .cg-info-guides__card-title {
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  .cg-info-hub .cg-container {
+    overflow-x: clip;
+  }
+}
