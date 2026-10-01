@@ -38,16 +38,20 @@ export default function HomePage() {
 
   return (
     <>
+      {/* HOME only: sitemap loc와 동일 trailing slash (Metadata API는 root를 origin-only로 정규화) */}
+      <link rel="canonical" href="https://abortioninfo.co.kr/" />
+      <meta property="og:url" content="https://abortioninfo.co.kr/" />
+
       <div className="cg-home cg-page--enter">
         <div className="cg-container">
-          {/* 1. 상단 검색의도 카드 6개 */}
-          <HomeContentCards />
-
-          {/* 2. H1 + subtitle + 리드 (지도/병원정보보다 먼저) */}
+          {/* 1. H1 — 서버 HTML에서 카드보다 먼저 (MAIN OWNER 신호) */}
           <header className="cg-page__header cg-home__header">
             <h1 className="cg-home__title">{HOME_INTRO.h1}</h1>
             <p className="cg-home__subtitle">{HOME_INTRO.subtitle}</p>
           </header>
+
+          {/* 2. 상단 검색의도 카드 6개 */}
+          <HomeContentCards />
 
           <section className="cg-home-lead">
             {HOME_INTRO.paragraphs.map((p) => (

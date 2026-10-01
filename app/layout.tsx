@@ -45,7 +45,8 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    ...baseMetadata.alternates,
+    // HOME canonical은 app/page.tsx에서 sitemap loc와 동일하게
+    // https://abortioninfo.co.kr/ 로 직접 출력 (Next가 root pathname을 origin-only로 정규화함)
     types: {
       "application/rss+xml": "/rss.xml",
     },
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://abortioninfo.co.kr",
+    // HOME og:url도 app/page.tsx에서 trailing slash 포함으로 출력
     siteName: "임신중절수술",
     title: HOME_SEO.title,
     description: HOME_SEO.description,
