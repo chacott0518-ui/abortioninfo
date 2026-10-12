@@ -2,6 +2,7 @@
  * 1차 신규 SUPPORT 가이드 (정보형 long-tail).
  * yeonsei365 병원 운영정책(타인카드·할부·주수별 금액)은 복제하지 않음.
  */
+import { MERGED_GUIDE_ID_SET } from "@/config/merged-guides";
 import { ROUTES } from "@/config/routes";
 import { SITE } from "@/config/site";
 import {
@@ -461,6 +462,13 @@ const DEFS: GuideDef[] = [
           "열람과 사본 발급 절차, 보관 안내를 구분해 질문하면 이해에 도움이 됩니다.",
         body: "세부 정책은 해당 의료기관마다 다를 수 있어 직접 확인하는 것이 정확합니다.",
       },
+      {
+        id: "record-emr-copy",
+        heading: "EMR·사본 발급은 어떻게 이해하면 되나요?",
+        answer:
+          "병원 EMR은 진료 목적의 전자기록이고, 사본 발급은 열람·발급 절차와 요건에 따라 별도로 안내될 수 있습니다.",
+        body: "수납·영수증 같은 회계성 자료와 EMR 진료기록을 동일시하지 않는 것이 중요합니다. 사본에 어떤 항목이 포함되는지, 발급에 필요한 서류·본인확인은 무엇인지 상담에서 구분해 질문하세요.",
+      },
     ],
     faqs: [
       {
@@ -474,6 +482,10 @@ const DEFS: GuideDef[] = [
       {
         q: "기록은 어떻게 보호되나요?",
         a: "의료·개인정보 관련 규범에 따라 보호되고 관리됩니다. 열람과 사본 발급에는 절차와 요건이 있습니다. 세부 정책은 해당 의료기관 안내에 따르는 것이 정확합니다.",
+      },
+      {
+        q: "EMR과 사본 발급은 같은가요?",
+        a: "같지 않은 경우가 많습니다. EMR은 진료 목적의 전자기록이고, 사본 발급은 별도 절차·요건이 있을 수 있습니다. 포함 항목과 본인확인 방법은 해당 의료기관 안내를 기준으로 확인하세요.",
       },
     ],
   },
@@ -512,6 +524,13 @@ const DEFS: GuideDef[] = [
           "공유 범위를 미리 정하고, 동행인에게 전달될 내용을 상담에서 확인하세요.",
         body: "민감정보 보호 절차는 기관 안내와 관련 법령을 기준으로 이해하면 됩니다.",
       },
+      {
+        id: "third-guardian",
+        heading: "보호자 열람은 어떻게 확인하나요?",
+        answer:
+          "보호자·법정대리인 열람도 동의나 법령 요건, 본인확인 절차에 따라 안내될 수 있어 자동 열람으로 단정하지 않습니다.",
+        body: "미성년·동행 상황처럼 조건이 달라질 수 있으므로, 보호자에게 공유되는 범위와 필요 서류를 상담에서 구체적으로 확인하세요.",
+      },
     ],
     faqs: [
       {
@@ -525,6 +544,10 @@ const DEFS: GuideDef[] = [
       {
         q: "걱정될 때 무엇을 묻나요?",
         a: "열람과 사본 발급 절차, 동의 범위, 보호자나 동행인에게 공유되는 범위를 질문할 수 있습니다. 상담 전에 미리 확인해 두면 불안을 줄이는 데 도움이 될 수 있습니다. 필요하면 개인정보 처리 안내도 함께 요청하세요.",
+      },
+      {
+        q: "보호자는 별도 절차 없이 열람할 수 있나요?",
+        a: "자동 열람으로 단정하기 어렵습니다. 동의·법령 요건·본인확인 등 절차가 안내될 수 있어, 보호자에게 공유되는 범위와 필요 서류를 상담에서 확인하는 편이 정확합니다.",
       },
     ],
   },
@@ -885,9 +908,23 @@ const DEFS: GuideDef[] = [
   },
 ];
 
-export const PHASE1_GUIDE_PAGES: ContentPage[] = DEFS.map(buildPage);
+const ACTIVE_DEFS = DEFS.filter((def) => !MERGED_GUIDE_ID_SET.has(def.id));
 
-export const PHASE1_GUIDE_FAQS = DEFS.flatMap((def) =>
+/** 2026-10-12 병합으로 본문이 갱신된 KEEP OWNER */
+const OWNER_TOUCHED_IDS = new Set([
+  "medicalRecordContents",
+  "thirdPartyRecordAccess",
+]);
+
+export const PHASE1_GUIDE_PAGES: ContentPage[] = ACTIVE_DEFS.map((def) => {
+  const page = buildPage(def);
+  if (OWNER_TOUCHED_IDS.has(def.id)) {
+    page.updatedAt = "2026-10-12";
+  }
+  return page;
+});
+
+export const PHASE1_GUIDE_FAQS = ACTIVE_DEFS.flatMap((def) =>
   def.faqs.map((item, index) => ({
     id: `${def.id}-faq-${index + 1}`,
     order: index + 1,

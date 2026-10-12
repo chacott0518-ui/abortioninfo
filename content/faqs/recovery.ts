@@ -51,4 +51,20 @@ export const RECOVERY_FAQS: FaqItem[] = [
     relatedLabel: "회복기간 안내",
     categories: ["recovery"],
   },
+  {
+    id: "recovery-06",
+    order: 6,
+    question: "회복 후 임신테스트기는 언제 확인하나요?",
+    answer:
+      "확인 시점은 시술 방법과 개인 경과, 의료기관 안내에 따라 달라질 수 있습니다. 시술 직후 바로 가정용 테스트기를 사용하면 결과에 혼선이 생길 수 있어, 안내받은 시점과 결과 해석 방법을 상담에서 확인하는 편이 안전합니다.",
+    categories: ["recovery"],
+  },
+  {
+    id: "recovery-07",
+    order: 7,
+    question: "재초음파는 꼭 받아야 하나요?",
+    answer:
+      "재초음파 필요 여부와 시점은 경과 확인 목적과 의료진 판단에 따라 달라질 수 있습니다. 자가 판단으로 검사를 생략하기보다 사후진료 일정에서 필요한 확인 항목을 맞춰 두는 것이 도움이 됩니다.",
+    categories: ["recovery"],
+  },
 ];

@@ -33,7 +33,7 @@ export const AFTER_DAILY_LIFE_PAGE: ContentPage = {
     href: ROUTES.recovery,
   },
   publishedAt: INFO_GUIDE_BATCH2_PUBLISHED_AT,
-  updatedAt: INFO_GUIDE_BATCH2_PUBLISHED_AT,
+  updatedAt: "2026-10-12",
   faqIds: [
     "after-daily-life-01",
     "after-daily-life-02",
@@ -130,7 +130,7 @@ export const AFTER_DAILY_LIFE_PAGE: ContentPage = {
       directAnswer:
         "샤워는 비교적 이른 시점부터 가능하다고 안내되는 경우가 많지만, 탕 목욕이나 사우나처럼 몸을 오래 담그는 활동은 더 신중한 판단이 필요할 수 있습니다.",
       paragraphs: [
-        "감염 위험과 관련된 활동이므로 병원에서 안내한 시점을 우선 따르는 것이 중요합니다.",
+        "감염 위험과 관련된 활동이므로 병원에서 안내한 시점을 우선 따르는 것이 중요합니다. 물줄기를 약하게 하고 외음부를 강하게 문지르지 않는 등 기본 위생 안내가 있을 수 있으니, 귀가 전 설명을 함께 확인하세요.",
       ],
       table: {
         columns: [
@@ -154,7 +154,7 @@ export const AFTER_DAILY_LIFE_PAGE: ContentPage = {
       directAnswer:
         "격한 운동, 성관계, 음주는 회복이 어느 정도 진행된 이후로 미루도록 안내되는 경우가 일반적이며, 정확한 시점은 개인 상태에 따라 다릅니다.",
       paragraphs: [
-        "이 활동들은 출혈이나 감염 위험과 관련이 있을 수 있어 임의로 앞당기기보다 안내받은 기준을 따르는 것이 중요합니다.",
+        "이 활동들은 출혈이나 감염 위험과 관련이 있을 수 있어 임의로 앞당기기보다 안내받은 기준을 따르는 것이 중요합니다. 가벼운 걷기와 격한 운동을 구분해 질문하고, 성관계 재개 전 출혈·분비물·통증 상태를 함께 확인하는 편이 안전합니다.",
       ],
       bullets: [
         "격한 운동은 회복 정도를 확인한 뒤 시작하기",

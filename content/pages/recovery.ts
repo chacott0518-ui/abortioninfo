@@ -24,13 +24,15 @@ export const RECOVERY_PAGE: ContentPage = {
     after: "에서 함께 확인할 수 있습니다.",
   },
   publishedAt: "2026-07-01",
-  updatedAt: "2026-07-27",
+  updatedAt: "2026-10-12",
   faqIds: [
     "recovery-01",
     "recovery-02",
     "recovery-03",
     "recovery-04",
     "recovery-05",
+    "recovery-06",
+    "recovery-07",
   ],
   faqTitle: "임신중절수술 회복기간 자주 묻는 질문",
   conclusion: [
@@ -236,6 +238,21 @@ export const RECOVERY_PAGE: ContentPage = {
       ],
       relatedHref: ROUTES.hospital,
       relatedLabel: "임신중절수술 병원선택 기준 보기",
+    },
+    {
+      id: "recovery-test-ultrasound",
+      order: 6,
+      numberLabel: "06",
+      heading: "회복 후 임신테스트기·재초음파는 언제 확인하나요?",
+      layout: "prose",
+      directAnswer:
+        "임신테스트기나 재초음파 확인 시점은 시술 방법과 개인 경과, 의료기관 안내에 따라 달라질 수 있어 일괄 날짜로 단정하기 어렵습니다. 안내받은 시점과 검사 목적을 기준으로 확인하는 편이 안전합니다.",
+      paragraphs: [
+        "시술 직후 바로 가정용 임신테스트기를 사용하면 결과에 혼선이 생길 수 있다는 안내가 있을 수 있습니다. 언제부터 어떤 방식으로 확인하면 되는지, 음성·양성이 나올 때 다음 조치는 무엇인지 상담에서 구분해 물어보세요.",
+        "재초음파는 자궁 회복·잔여 조직 여부 등 경과 확인 목적에 따라 권고 시점이 달라질 수 있습니다. 자가 판단으로 검사를 미루거나 앞당기기보다, 사후진료 일정과 함께 필요한 확인 항목을 맞춰 두는 것이 도움이 됩니다.",
+      ],
+      relatedHref: ROUTES.afterSymptoms,
+      relatedLabel: "회복 중 이상증상 확인하기",
     },
   ],
 };

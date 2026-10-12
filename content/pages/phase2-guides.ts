@@ -2,6 +2,7 @@
  * 2차 신규 SUPPORT 가이드 (정보형 long-tail).
  * yeonsei365 병원 운영정책(타인카드·할부·주수별 금액)은 복제하지 않음.
  */
+import { MERGED_GUIDE_ID_SET } from "@/config/merged-guides";
 import { ROUTES } from "@/config/routes";
 import { SITE } from "@/config/site";
 import {
@@ -1709,9 +1710,11 @@ const DEFS: GuideDef[] = [
   },
 ];
 
-export const PHASE2_GUIDE_PAGES: ContentPage[] = DEFS.map(buildPage);
+const ACTIVE_DEFS = DEFS.filter((def) => !MERGED_GUIDE_ID_SET.has(def.id));
 
-export const PHASE2_GUIDE_FAQS = DEFS.flatMap((def) =>
+export const PHASE2_GUIDE_PAGES: ContentPage[] = ACTIVE_DEFS.map(buildPage);
+
+export const PHASE2_GUIDE_FAQS = ACTIVE_DEFS.flatMap((def) =>
   def.faqs.map((item, index) => ({
     id: `${def.id}-faq-${index + 1}`,
     order: index + 1,

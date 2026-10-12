@@ -41,4 +41,12 @@ export const AFTER_SYMPTOMS_FAQS: FaqItem[] = [
       "재방문 시점은 병원과 개인 상태에 따라 다르며, 귀가 전 안내받은 일정을 따르는 것이 일반적입니다. 안내 없이 스스로 회복이 끝났다고 판단하기보다 예정된 확인 절차를 지키는 것이 안전합니다.",
     categories: ["afterSymptoms"],
   },
+  {
+    id: "after-symptoms-06",
+    order: 6,
+    question: "출혈량을 어떻게 기록해 두면 좋나요?",
+    answer:
+      "교체 간격, 양 변화, 증상, 활동 여부를 짧게 적어두면 전달에 도움이 됩니다. 완벽한 표가 아니어도 시간순 설명이 충분할 수 있으며, 안내된 연락 기준과 비교해 애매하면 의료기관에 재확인하는 편이 안전합니다.",
+    categories: ["afterSymptoms"],
+  },
 ];

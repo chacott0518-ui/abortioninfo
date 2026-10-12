@@ -33,13 +33,14 @@ export const AFTER_SYMPTOMS_PAGE: ContentPage = {
     href: ROUTES.recovery,
   },
   publishedAt: INFO_GUIDE_BATCH2_PUBLISHED_AT,
-  updatedAt: INFO_GUIDE_BATCH2_PUBLISHED_AT,
+  updatedAt: "2026-10-12",
   faqIds: [
     "after-symptoms-01",
     "after-symptoms-02",
     "after-symptoms-03",
     "after-symptoms-04",
     "after-symptoms-05",
+    "after-symptoms-06",
   ],
   faqTitle: "임신중절수술 후 이상증상 자주 묻는 질문",
   conclusion: [
@@ -125,6 +126,7 @@ export const AFTER_SYMPTOMS_PAGE: ContentPage = {
       paragraphs: [
         "생리량보다 눈에 띄게 많은 출혈, 큰 덩어리가 반복되는 출혈, 시간이 지나도 줄지 않는 출혈은 스스로 판단하기보다 병원에 문의하는 것이 안전합니다.",
         "정확한 출혈 기준은 시술 방법과 개인 상태에 따라 병원에서 다르게 안내할 수 있으므로, 귀가 전 안내받은 기준을 우선 참고하는 것이 필요합니다.",
+        "패드 교체 간격·양 변화·활동 여부를 짧게 적어 두면 문의 시 전달이 수월할 수 있습니다. 애매하면 안내된 연락 기준으로 의료기관에 재확인하는 편이 안전합니다.",
       ],
     },
     {

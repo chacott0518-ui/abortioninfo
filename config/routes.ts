@@ -1,3 +1,5 @@
+import { MERGE_REDIRECTS } from "@/config/merged-guides";
+
 export const ROUTES = {
   home: "/",
   cost: "/임신중절수술-비용",
@@ -47,6 +49,7 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/faq": ROUTES.faq,
   "/임신중절수술-병원선택": ROUTES.hospital,
   "/임신중절수술-자주묻는질문": ROUTES.faq,
+  ...MERGE_REDIRECTS,
 };
 
 export type RouteKey = keyof typeof ROUTES;
